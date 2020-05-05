@@ -1,0 +1,130 @@
+svg{
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+.container_header 
+{
+    
+    padding-left: 2em;
+    background-color: rgb(74, 115, 175);
+}
+.container_header a
+{
+    color: rgb(238, 240, 239);
+}
+.container_header .pace2
+{
+    padding-left: 20px;
+   
+   
+}
+.container_header .pace2 a
+{
+    color: rgb(255, 255, 255);
+    padding-right: 120px;
+}
+.logo
+{
+    margin-left:3em;
+    padding: 20px;
+    width: 60%;
+    
+}
+.container_naveg 
+{
+    
+    font-size: 22px;
+    font-weight: 650;
+    padding: 20px;
+    color: #f0000000;
+}
+.container_naveg a
+{
+    padding-top: 1em;
+    padding-right: 2rem;
+    color: rgb(63, 63, 189);
+}
+.banner img
+{
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.conteudo p
+{
+    
+    margin-top: 2em;
+    position: relative;
+    max-width: 750px;
+    text-align: left;
+    color: #fff;
+    font-size: 17px;
+}
+.conteudo h2
+{
+    padding-top: 3em;
+    max-width: 800px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.945);
+    font-size: 27px;
+    font-weight: 800;
+}
+.conteudo h2 .gratis
+{
+    color:rgb(80, 8, 99);
+}
+.conteudo button
+{
+    border-radius: 1em;
+    border-width: 8px;
+    border-color: rgb(30, 112, 180);
+    margin-top: 1em;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+}
+.conteudo button a
+{
+    color: rgba(76, 6, 134, 0.986);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.container_intro .introducao
+{
+    
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-left: 6em;
+    padding-right: 6em;
+    padding-top: 6em;
+    padding-bottom: 1em;
+}
+.offer
+{
+    margin-left: 5em;
+    margin-right: 5em;
+    padding-left: 4em;
+}
+.offer .card
+{
+    background-color: rgb(255, 255, 255);
+    
+}
+.offer .card-body h3
+{
+    justify-content: left;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 400;
+}
