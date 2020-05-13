@@ -1,2 +1,3 @@
 # Estoque
  Trabalho interdisciplinar
+~ NÃO PUBLICAS OS ARQUIVOS DO TRABALHO SEM A PERMISSÃO DOS MEMBROS! ~
