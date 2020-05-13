@@ -1,1 +1,1 @@
-<?php include_once('mpsys.html'); ?>
+<?php include_once('html/mpsys/mpsys.html'); ?>
