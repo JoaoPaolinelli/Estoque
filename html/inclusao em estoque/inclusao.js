@@ -79,7 +79,6 @@ function imprimeDados() {
         <td>${objDados.produtos[i].prateleira}</td>
         <td>${objDados.produtos[i].posicao}</td>
       </tr>`
-
   }
 
   tabela.innerHTML = strHtml;

@@ -33,93 +33,90 @@
   <main>
 
     <!--FORMULÁRIO-->
-    <form class="formulario">
-
-      <div class="form-row">
-        <div class="col mb-3">
-          <label for="l_descricao"><strong>Descrição</strong></label>
-          <input type="text" class="form-control" id="descricao">
-
-        </div>
-
+    <div class="form-row">
+      <div class="col mb-3">
+        <label for="l_descricao"><strong>Descrição</strong></label>
+        <input type="text" class="form-control" id="descricao">
+    
       </div>
-
-
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="l_codigo"><strong>Código</strong></label>
-          <input type="text" class="form-control" id="codigo" value="XX.XX.XXX.XXXX">
-        </div>
-
-        <div class="col-md-3 mb-3">
-          <label for="l_categoria"><strong>Categoria</strong></label>
-          <select class="custom-select" id="categoria">
-            <option selected disabled value="">Categoria...</option>
-            <option>Alimentos</option>
-            <option>Vestuário</option>
-            <option>Limpeza</option>
-            <option>...</option>
-          </select>
-        </div>
-
-
-        <div class="col-md-3 mb-3">
-          <label for="l_quantidade"><strong>Quantidade</strong></label>
-          <input type="number" class="form-control" id="quantidade" value="0">
-        </div>
-
-        <div class="col-md-3 mb-3">
-          <label for="l_valor"><strong>Valor de aquisição</strong></label>
-          <input type="number" class="form-control" id="valor" value="0.00">
-        </div>
-
+    
+    </div>
+    
+    
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <label for="l_codigo"><strong>Código</strong></label>
+        <input type="text" class="form-control" id="codigo" value="XX.XX.XXX.XXXX">
       </div>
-
-
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="l_armazem">Armazém</label>
-          <input type="text" class="form-control" id="armazem">
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="l_estante">Estante</label>
-          <input type="text" class="form-control" id="estante">
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="l_prateleira">Prateleira</label>
-          <input type="text" class="form-control" id="prateleira">
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="l_posicao">Posição</label>
-          <input type="text" class="form-control" id="posicao">
-        </div>
-
+    
+      <div class="col-md-3 mb-3">
+        <label for="l_categoria"><strong>Categoria</strong></label>
+        <select class="custom-select" id="categoria">
+          <option selected disabled value="">Categoria...</option>
+          <option>Alimentos</option>
+          <option>Vestuário</option>
+          <option>Limpeza</option>
+          <option>...</option>
+        </select>
       </div>
-
-      <button class="btn btn-primary" id="btnRegistrar" type="submit">Adicionar ao estoque</button>
-      <br><br>
-      <button id="btnCarregaDados">Carrega Dados (Teste)</button>
-      <br><br>
-      <div id="tabela">
-        <table class="table table-responsive table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Código</th>
-              <th scope="col">Descrição</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Valor Aq.</th>
-              <th scope="col">Categoria</th>
-              <th scope="col">Armazém</th>
-              <th scope="col">Estante</th>
-              <th scope="col">Prateleira</th>
-              <th scope="col">Posição</th>
-            </tr>
-          </thead>
-          <tbody id="corpoTabela"></tbody>
-        </table>
-
+    
+    
+      <div class="col-md-3 mb-3">
+        <label for="l_quantidade"><strong>Quantidade</strong></label>
+        <input type="number" class="form-control" id="quantidade" value="0">
       </div>
-    </form>
+    
+      <div class="col-md-3 mb-3">
+        <label for="l_valor"><strong>Valor de aquisição</strong></label>
+        <input type="number" class="form-control" id="valor" value="0.00">
+      </div>
+    
+    </div>
+    
+    
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <label for="l_armazem">Armazém</label>
+        <input type="text" class="form-control" id="armazem">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="l_estante">Estante</label>
+        <input type="text" class="form-control" id="estante">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="l_prateleira">Prateleira</label>
+        <input type="text" class="form-control" id="prateleira">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="l_posicao">Posição</label>
+        <input type="text" class="form-control" id="posicao">
+      </div>
+    
+    </div>
+    
+    <button class="btn btn-primary" id="btnRegistrar" type="submit">Adicionar ao estoque</button>
+    <br><br>
+    <button id="btnCarregaDados">Carrega Dados (Teste)</button>
+    <br><br>
+    <div id="tabela">
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor Aq.</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Armazém</th>
+            <th scope="col">Estante</th>
+            <th scope="col">Prateleira</th>
+            <th scope="col">Posição</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+      </table>
+    
+    </div>
 
 
   </main>
