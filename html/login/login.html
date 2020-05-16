@@ -70,15 +70,17 @@
         login.onsubmit = (e) => {
             for(i = 0; i < db_login.dados.length - 1; i++){
                 if(verificaLogin(email.value, senha.value)){
-                    
+                    localStorage.setItem('username',db_login.dados[i].username);
+                    sessionStorage.setItem('log_in',0);
+                    window.location.href = "../../html/mpsys/mpsys.html";
                 }
                 else{
                     let error = `<p id="emailHelp" class="form-text text-danger">Crendencias Inválidas.</p>`;
                     document.getElementById('emailHelp').outerHTML = error;
-                    e.preventDefault();
                 }
             }
-            
+            e.preventDefault();
+
         }
     </script>
 
