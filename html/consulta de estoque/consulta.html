@@ -8,39 +8,46 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src='../../js/fakedb_login.js'></script>
-    <!-- <script src='../js/home.js'></script> --> 
+    <!-- <script src='../js/home.js'></script> -->
     <title>Estoq</title>
 </head>
 
 <body>
-     <!--Cabeçalho-->
-     <header>
+    <!-- Modais -->
+    <div id="modais">
+
+    </div>
+    <!--Cabeçalho-->
+    <header>
         <div class="container-flex">
             <div class="container_menu">
                 <div class="row">
                     <div class="col-3">
-                       <a href="../../html/home/home.html"> <img src="../../img/logo.png" alt="logo" class="logo"> </a>
+                        <a href="../../html/home/home.html"> <img src="../../img/logo.png" alt="logo" class="logo"> </a>
                     </div>
                     <!-- A IDEIA POR TRAS DO NAV É POSSIBILITAR O USUÁRIO ACESSAR O QUE PRECISA EM 5 CLIQUE OU MENOS -->
                     <div class="container_naveg">
                         <div class="col-12">
                             <ul class="nav justify-content-center">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Produtos
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownProdutos">
-                                        <a class="dropdown-item" href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
-                                        <a class="dropdown-item" href="../../html/consulta de estoque/consulta.html">Consulta</a>
+                                        <a class="dropdown-item"
+                                            href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
+                                        <a class="dropdown-item"
+                                            href="../../html/consulta de estoque/consulta.html">Consulta</a>
                                         <a class="dropdown-item" href="#">Vendas</a>
                                         <a class="dropdown-item" href="#">Compras</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Financeiro
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownFinanceiros">
@@ -50,10 +57,11 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" href="#">Serviços</a>
+                                    <a class="nav-link" href="#">Serviços</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Externos
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownExternos">
@@ -63,7 +71,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" type="button" id="dropdownConfig" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a href="#" class="nav-link" type="button" id="dropdownConfig"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-cog"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownConfig">
@@ -75,39 +84,142 @@
                             </ul>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
-        
-        <div class="row">
-            <div class="col-12 info text-center lead">
-                <i class="far fa-user"></i>
-                <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="username">
-                     USUARIO
-                </div>
-                
-                <i class="fas fa-briefcase"></i> 
-                <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="empresa">
-                    EMPRESA
-                </div>
 
-                <i class="fas fa-percent"></i> 
-                <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="taxa">
-                    TAXA(?)
+            <div class="row">
+                <div class="col-12 info text-center lead">
+                    <i class="far fa-user"></i>
+                    <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="username">
+                        
+                    </div>
+
+                    <i class="fas fa-briefcase"></i>
+                    <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="empresa">
+                        
+                    </div>
+
+                    <i class="fas fa-percent"></i>
+                    <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4" id="taxa">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </header>
-    
+
     <main class="container">
         <div class="row">
             <div class="col-12">
                 <h1>Consulta</h1>
-                
+                <div class="form-row">
+                    <div class="form-group col-7">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" id="consulta">
+                            <div class="input-group-append">
+                                <select class="btn btn-secondary" id="pesquisa">
+                                    <option value="0" selected>
+                                        Pesquisar por
+                                    </option>
+                                    <option value="descricao">Descrição</option>
+                                    <option value="codigo">Código</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-5">
+                        <button class="btn btn-primary" id="btnConsultar" type="submit">Consultar no Estoque</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 align-items-center text-center">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2 h5">Código</div>
+                                    <div class="col-7 h5">Descrição</div>
+                                    <div class="col-3 h5">Informações</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lista">
+                            
+
+
+
+                            
+                            <!-- <table class="table table-responsive table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Quantidade</th>
+                                        <th scope="col">Valor Aq.</th>
+                                        <th scope="col">Categoria</th>
+                                        <th scope="col">Armazém</th>
+                                        <th scope="col">Estante</th>
+                                        <th scope="col">Prateleira</th>
+                                        <th scope="col">Posição</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="corpoTabela">
+
+                                </tbody>
+                            </table> -->
+
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- <div class="col-2 bg-light">
+                <h3>Filtro</h3>
+                <h5>Quantidade</h5>
+                <div id="1">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                </div>
+                <h5>Valor Aq.</h5>
+                <div id="2">
+
+                </div>
+                <h5>Categoria</h5>
+                <div id="3">
+
+                </div>
+                <h5>Armazém</h5>
+                <div id="4">
+
+                </div>
+                <h5>Estante</h5>
+                <div id="5">
+
+                </div>
+                <h5>Prateleira</h5>
+                <div id="5">
+
+                </div>
+                <h5>Posição</h5>
+                <div id="6">
+
+                </div>
+            </div> -->
         </div>
+
     </main>
 
+    <script src="../../js/consulta.js"></script>
+    </script>
     <script src="../../js/header.js">
     </script>
     <!-- Bootstrap JS -->
