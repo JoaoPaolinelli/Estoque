@@ -44,7 +44,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
                         <p class="cadastro">
-                            Ainda não possui uma conta? <a href="#"> Faça o cadastro agora. </a>
+                            Ainda não possui uma conta? <a href="../../html/cadastro/cadastro.html"> Faça o cadastro agora. </a>
                         </p>
                     </form>
                 </div>
@@ -58,8 +58,18 @@
         </div>
     </footer>
     <script>
-        let verificaLogin = (email, senha) => {
-            if(db_login.dados[i].email == email && db_login.dados[i].senha == senha){
+        let verificaLoginDB_Login = (email, senha) => {
+            if((db_login.dados[i].email == email && db_login.dados[i].senha == senha)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        let verificaLoginDB_Cadastro = (email, senha) => {
+            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
+            if((db_cadastros.cadastro[i].email == email && db_cadastros.cadastro[i].senha == senha)){
                 return true;
             }
             else{
@@ -69,18 +79,26 @@
 
         login.onsubmit = (e) => {
             for(i = 0; i < db_login.dados.length; i++){
-                if(verificaLogin(email.value, senha.value)){
+                if(verificaLoginDB_Login(email.value, senha.value)){
                     let dados = JSON.stringify(db_login.dados[i]);
                     localStorage.setItem('dados',dados);
                     sessionStorage.setItem('log_in',0);
                     window.location.href = "../../html/home/home.html";
                 }
-                else{
-                    let error = `<p id="emailHelp" class="form-text text-danger">Crendencias Inválidas.</p>`;
-                    document.getElementById('emailHelp').outerHTML = error;
+            }
+
+            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
+            for(i = 0; i < db_cadastros.cadastro.length; i++){
+                if(verificaLoginDB_Cadastro(email.value, senha.value)){
+                    let dados = JSON.stringify(db_cadastros.cadastro[i]);
+                    localStorage.setItem('dados',dados);
+                    sessionStorage.setItem('log_in',0);
+                    window.location.href = "../../html/home/home.html";
                 }
             }
            
+            let error = `<p id="emailHelp" class="form-text text-danger">Crendencias Inválidas.</p>`;
+            document.getElementById('emailHelp').outerHTML = error;
             e.preventDefault();
 
         }
