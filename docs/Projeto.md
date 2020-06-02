@@ -1,19 +1,21 @@
 # Informações do Projeto
-`TÍTULO DO PROJETO`  
+`MPSys / eStoq`  
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`CURSO`
+`CIÊNCIA DA COMPUTAÇÃO`
 
-`SEMESTRE`
+`1º PERÍODO`
 
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
-
-> Inclua a lista dos membros da equipe com seus nomes completos.
+- Cláudio Manoel Jansen de Oliveira
+- Danniel Henrique Correa Vieira
+- Felipe Tadeu Góes Guimarães
+- João Paolinelli
+- Ludmila Bruna Santos Nascimento
+- Marco Aurélio Silva de Souza Júnior
 
 # Estrutura do Documento
 
