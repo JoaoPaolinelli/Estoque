@@ -1,7 +1,7 @@
 # Informações do Projeto
 `MPSys / eStoq`  
 
-Trabalho Interdisciplinar - Aplicacões Web
+Trabalho Interdisciplinar - Aplicações Web
 
 `CIÊNCIA DA COMPUTAÇÃO`
 
