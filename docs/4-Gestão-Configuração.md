@@ -1,22 +1,24 @@
 # Gestão de Configuração
 
-> Nesta parte do documento, você deve apresentar como foi realizada a
-> gestão de configuração do projeto. Isto é, como a ferramenta de
-> controle de versão foi configurada, bem como a hospedagem da
-> plataforma.
-
 ## Controle de Versão
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório `upstream`.
+A ferramenta de controle de versão adotada no projeto foi o [Git](https://git-scm.com/), sendo que o [Github](https://github.com) foi utilizado para hospedagem do repositório `upstream`.
 
-O projeto segue a seguinte convenção para o nome de branchs:
+O projeto segue o workflow GitHub Flow, que é baseado em 6 princípios:
 
-- `master`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+> ##### 1. Tudo na branch `master` é implementavél.
+> ##### 2. Para trabalhar em algo novo, crie uma branch apartir da `master` e dê um nome descritivo. (i.e., refatorar-autenticacao, templates-home).
+> ##### 3. Faça `commit` para essa branch localmente e dê `push` regularmente do que foi feito para uma branch de mesmo nome no remote.
+> ##### 4. Quando precisar de feedback/ajuda, ou pensar que a branch está pronta para o `merge`, abra um `pull request`.
+> ##### 5. Depois que alguém revisou e aprovou o `feature`, pode haver o `merge` com a branch `master`.
+> ##### 6. Uma vez que feito o `merge` e o push para a `master`, pode e *deve* implementar imediatamente.
+
+![GitHub Flow](images/github_flow.gif)
+
+Portanto, o projeto segue a seguinte convenção para o nome de branchs:
+
+- `master`: versão pronta para implementação (deploy)
+- `nome-explicativo`: versão herdada da `master`.
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -25,23 +27,9 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-> Discuta como a configuração do projeto foi feita na ferramenta de
-> versionamento escolhida. Exponha como a gerência de tags, merges,
-> commits e branchs é realizada. Discuta como a gerência de issues foi
-> realizada.
->
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-
+ 
 ## Hospedagem
 
-> Explique como a hospedagem e o lançamento da plataforma foi feita.
->
-> **Links Úteis**:
->
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Crie seu Site com o
->   HostGator](https://www.hostgator.com.br/como-publicar-seu-site)
-> - [GoDady](https://br.godaddy.com/how-to)
-> - [GitHub Pages](https://pages.github.com/)
+Para hospedar o projeto, foi utilizado o serviço do Heroku pela facilidade da implementação e acesso.
+
+Inicialmente, a hospedagem teve seu deploy feito com uma página `PHP` simples para utilizar a plataforma. Porém, isso não representa a linguagem final a se utilizar para estabelecer o projeto.
