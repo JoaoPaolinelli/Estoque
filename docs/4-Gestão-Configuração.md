@@ -32,4 +32,10 @@ etiquetas:
 
 Para hospedar o projeto, foi utilizado o serviço do Heroku pela facilidade da implementação e acesso.
 
-Inicialmente, a hospedagem teve seu deploy feito com uma página `PHP` simples para utilizar a plataforma. Porém, isso não representa a linguagem final a se utilizar para estabelecer o projeto.
+Inicialmente, a hospedagem tem seu deploy feito `PHP` para utilizar a plataforma. Porém, isso não representa a linguagem final a se utilizar no back-end do projeto.
+
+## Fluxo de Publicação
+
+Seguindo o modelo do GitHub Flow apresentado acima, a branch `master` deve estar sempre pronta para deploy.
+Portanto, no momento que os `pull-request`s para a `master` são confirmados e assinados, é feito a publicação manual do projeto, isto é, o comando `push` da `master` para a branch `heroku`, completando assim o processo de 
+implementação dos códigos.
