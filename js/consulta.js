@@ -1,3 +1,7 @@
+// pegar CNPJ da empresa:
+var objDadosDeCadastro = JSON.parse(localStorage.getItem('dados'));
+var CNPJdaEmpresa = objDadosDeCadastro.CNPJ;
+
 function existeArmazenado(key) {
     if (localStorage.getItem(key) == null) {
         r = false;
@@ -104,11 +108,11 @@ function escreverLista() {
 }
 
 function getAll() {
-    return JSON.parse(localStorage.getItem('db'));
+    return JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
 }
 
 function getDadosByCod(cod) {
-    let db = JSON.parse(localStorage.getItem('db'));
+    let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
     let dados = '';
     for (i = 0; i < db.produtos.length; i++) {
         if (db.produtos[i].codigo == cod) {
@@ -119,7 +123,7 @@ function getDadosByCod(cod) {
 }
 
 function getDadosByDesc(desc) {
-    let db = JSON.parse(localStorage.getItem('db'));
+    let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
     let dados = '';
     for (i = 0; i < db.produtos.length; i++) {
         if (db.produtos[i].descricao == desc) {
@@ -253,7 +257,7 @@ function consultar() {
     }
 }
 
-if (existeArmazenado('db')) {
+if (existeArmazenado(`${CNPJdaEmpresa}`)) {
     escreverLista();
     document.getElementById('btnConsultar').addEventListener('click', consultar);
 } else {

@@ -1,5 +1,9 @@
+// pegar CNPJ da empresa:
+var objDadosDeCadastro = JSON.parse(localStorage.getItem('dados'));
+var CNPJdaEmpresa = objDadosDeCadastro.CNPJ;
+
 function leDados() {
-  let strDados = localStorage.getItem('db');
+  let strDados = localStorage.getItem(`${CNPJdaEmpresa}`);
   let objDados = {};
 
   if (strDados) {
@@ -24,7 +28,7 @@ function leDados() {
 }
 
 function salvaDados(dados) {
-  localStorage.setItem('db', JSON.stringify(dados));
+  localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(dados)); //todo: colocar o nome da empresa em 'db'
 }
 
 function incluirProdutos() {
