@@ -9,17 +9,12 @@ function leDados() {
   if (strDados) {
     objDados = JSON.parse(strDados);
   }
+
   else {
     objDados = {
       produtos: [
-        { descricao: "Maçã", codigo: "123456", categoria: "alimentos", quantidade: "50", 
-        valor: "1.00", armazem: "1", estante: "2", prateleira: "A", posicao: "0" },
-
-        { descricao: "Detergente", codigo: "654321", categoria: "limpeza", quantidade: "20", 
-        valor: "3.00", armazem: "1", estante: "3", prateleira: "D", posicao: "4" },
-
-        { descricao: "Sapato", codigo: "987654", categoria: "roupas", quantidade: "5", 
-        valor: "50.00", armazem: "1", estante: "1", prateleira: "B", posicao: "1" },
+        { descricao: "", codigo: "", categoria: "", quantidade: "", 
+        valor: "", armazem: "", estante: "", prateleira: "", posicao: "" }
       ]
     }
   }
@@ -28,7 +23,7 @@ function leDados() {
 }
 
 function salvaDados(dados) {
-  localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(dados)); //todo: colocar o nome da empresa em 'db'
+  localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(dados));
 }
 
 function incluirProdutos() {
@@ -90,5 +85,4 @@ function imprimeDados() {
 
 
 // Configura os botões
-document.getElementById('btnCarregaDados').addEventListener('click', imprimeDados);
 document.getElementById('btnRegistrar').addEventListener('click', incluirProdutos);
