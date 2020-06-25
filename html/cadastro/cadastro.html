@@ -134,16 +134,42 @@
                     CNPJ: strCNPJ,
                     taxa: 0 
                 };
-                objcadastro.cadastro.push(novoCad);
-                
-                // Salvar os dados no localStorage novamente
-                salvaDados(objcadastro);
+
+                if (emailExistente(novoCad)) {
+                    alert("Usuário já cadastrado!");
+                }
+                else {
+                    objcadastro.cadastro.push(novoCad);
+                    salvaDados(objcadastro);
+                    alert("Cadastro realizado com sucesso!");
+                }
             }
 
+
+            // Checar se cadastro já existe
+            function emailExistente(novoCad) {
+                let usuarioJaExiste = false;
+                let objUsuarios = JSON.parse(localStorage.getItem('cadastro')).cadastro;
+                let i = 0;
+                while (i < objUsuarios.length && !usuarioJaExiste) {
+                    console.log(objUsuarios[i].email);
+                    console.log(novoCad.email);
+                    if (objUsuarios[i].email == novoCad.email) {
+                        usuarioJaExiste = true;
+                    }
+                    i++;
+                }
+                return usuarioJaExiste;
+            }
+            
+
+            // Salvar os dados no localStorage
             function salvaDados(dados) {
                localStorage.setItem('cadastro', JSON.stringify(dados));
             }
             
+
+            // le dados do localStorage
             function leDados() {
                 let strDados = localStorage.getItem('cadastro');
                 let objDados = {};
@@ -174,12 +200,13 @@
                                 taxa: 25.0
                             }
                         ]
-
                     };
                 }
                 return objDados; 
             }
 
+
+            // checa se todos os campos foram preenchidos
             function isAllInputsFilled() {
                 if (isEmpty('nome') || isEmpty('username') || isEmpty('email') || isEmpty('senha') || isEmpty(
                         'empresa') || isEmpty('cnpj')) {
@@ -189,6 +216,8 @@
                 }
             }
 
+
+            // checa se o campo está vazio
             function isEmpty(item) {
                 if (document.getElementById(item).value == undefined || document.getElementById(item).value == "" ||
                     document.getElementById(item).length == 0) {
@@ -197,6 +226,8 @@
                     return false;
                 }
             }
+
+
             // função para gerar códigos randômicos a serem utilizados como código de usuário
             // Fonte: https://stackoverflow.com/questions/105034/how-to-create-guid-uuid
             function generateUUID() { // Public Domain/MIT
