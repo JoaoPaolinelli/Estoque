@@ -14,7 +14,22 @@
     background-color: #55CED5;
 }
 
+.bg-custom-darkblue {
+    background-color: #3F3FBD;
+}
+
 #rap-rel-produtos {
     overflow-y: scroll;
     height: 390px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #F8F7E3!important;
+    color: #32383E!important;
+    font-weight: bolder;
+}
+
+.nav-pills .nav-link:not(active) {
+    color: #3F3FBD!important;
+    font-weight: bold;
 }

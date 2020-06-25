@@ -37,6 +37,10 @@ function getDadosByDesc(desc) {
 function consultar() {
     let consulta = document.getElementById('consulta').value;
     let esp = document.getElementById('pesquisa').value;
+    
+    let titulo = document.querySelector(".titulo-consulta-home");
+    titulo.innerHTML = `Produtos - Resultados por "${consulta}" `;
+
 
     if (esp == "descricao") {
         d = getDadosByDesc(consulta);
@@ -71,6 +75,8 @@ function escreveConsulta(d) {
                         <td>${d['quantidade']}</td>
                         <td>${d['valor']}</td>
                     </tr>`;
+
+                    
 
     table.innerHTML = inHTMLtable;
 
