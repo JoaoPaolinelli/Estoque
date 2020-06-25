@@ -13,3 +13,8 @@
 .bg-custom-lightblue {
     background-color: #55CED5;
 }
+
+#rap-rel-produtos {
+    overflow-y: scroll;
+    height: 390px;
+}

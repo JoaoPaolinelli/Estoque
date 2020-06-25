@@ -103,28 +103,76 @@
     
     <main class="container">
         <div class="row">
+            <!-- Navegação Rápida e Relevante -->
             <div class="col-8">
-                <div class="card text-center">
-                    <div class="card-header bg-custom-purple">
-                      <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                          <a class="nav-link active" href="#">Active</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                      </ul>
+                <div class="row">
+                    <div class="col-3">
+                      <div class="nav flex-column nav-pills" id="rapid-relev-tabs" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="rap-rel-produtos-tab" data-toggle="pill" href="#rap-rel-produtos" role="tab" aria-controls="rap-rel-produtos" aria-selected="true">
+                            Produtos
+                        </a>
+                        <a class="nav-link" id="rap-rel-vendas-tab" data-toggle="pill" href="#rap-rel-vendas" role="tab" aria-controls="rap-rel-vendas" aria-selected="false">
+                            Vendas
+                        </a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                            Compras
+                        </a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                            Relatórios
+                        </a>
+                      </div>
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="col-9">
+                      <div class="tab-content" id="radid-relev-tabContent">
+                        <div class="tab-pane fade show active" id="rap-rel-produtos" role="tabpanel" aria-labelledby="rap-rel-produtos-tab">
+                            <div class="container">
+                                <div class="form-row sticky-top">
+                                    <div class="form-group col-7">
+                                        <div class="input-group">
+                
+                                            <input type="text" class="form-control shadow" id="consulta">
+                                            <div class="input-group-append shadow">
+                                                <select class="btn btn-secondary" id="pesquisa">
+                                                    <option value="codigo">Código</option>
+                                                    <option value="descricao">Descrição</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-5">
+                                        <button class="btn btn-primary shadow" id="btnConsultar" type="submit">Consultar no Estoque</button>
+                                    </div>
+                                </div>
+                                <h2 class="titulo-consulta-home">Produtos</h2>
+                                <div class="card">
+                                    <div class="card-body" id="card-body-table-produtos">
+                                        <table class="table table-striped table-produtos-consulta">
+                                            <thead>
+                                                <tr>
+                                                    <th>Cód.</th>
+                                                    <th>Descrição</th>
+                                                    <th>Qtd.</th>
+                                                    <th>Preço</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table-body-produtos">
+                                                <tr>
+                                                    <th class="text-center" colspan="4">Sem consulta...</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="rap-rel-vendas" role="tabpanel" aria-labelledby="rap-rel-vendas-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                      </div>
                     </div>
-                  </div> 
+                  </div>
             </div>
+            <!-- Dados e Taxas -->
             <div class="col-4">
                 <div class="card text-center">
                     <div class="card-header bg-custom-dark text-white pt-2 px-0">
@@ -193,8 +241,8 @@
         </div>
     </main>
 
-    <script src="../../js/header.js">
-    </script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/home.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
