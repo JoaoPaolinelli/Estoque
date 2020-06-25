@@ -76,11 +76,31 @@ function escreveConsulta(d) {
 
 }
 
+function initTable(){
+    let table = document.getElementById('table-body-produtos');
+    let inHTMLtable = '';
+    let dados = getAll();
+
+    for (i = 0; i < dados.produtos.length; i++) {
+        inHTMLtable += `<tr>
+                            <th>${dados.produtos[i].codigo}</th>
+                            <td>${dados.produtos[i].descricao}</td>
+                            <td>${dados.produtos[i].quantidade}</td>
+                            <td>${dados.produtos[i].valor}</td>
+                        </tr>`;
+    }
+    table.innerHTML = inHTMLtable;
+}
+
+function getAll() {
+    return JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+}
+
+
 window.onload = () => {
     if (existeArmazenado(`${CNPJdaEmpresa}`)) {
-        
+        initTable();
         document.querySelector('#btnConsultar').addEventListener('click', consultar);
-
         document.querySelector('#consulta').addEventListener('keydown',(e) => {
             if(e.keyCode == 13){
                 consultar();
