@@ -1,6 +1,5 @@
 // pegar CNPJ da empresa:
-var objDadosDeCadastro = JSON.parse(localStorage.getItem('dados'));
-var CNPJdaEmpresa = objDadosDeCadastro.CNPJ;
+var CNPJdaEmpresa = JSON.parse(localStorage.getItem('dados')).CNPJ;
 
 function existeArmazenado(key) {
     if (localStorage.getItem(key) == null) {
@@ -266,7 +265,7 @@ if (existeArmazenado(`${CNPJdaEmpresa}`)) {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 h4">
-                                    Não produtos cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
+                                    Não foram encontrados produtos cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
                                 </div>
                             </div>
                         </div>
