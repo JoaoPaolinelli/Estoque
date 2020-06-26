@@ -45,6 +45,7 @@ function consultar() {
     if (esp == "descricao") {
         d = getDadosByDesc(consulta);
     } else {
+        console.log(`Consulta ${consulta}`)
         d = getDadosByCod(consulta);
     }
     
@@ -66,19 +67,29 @@ function consultar() {
 }
 
 function escreveConsulta(d) {
-    let table = document.getElementById('table-body-produtos');
-    let inHTMLtable;
+    let cardTable= document.getElementById('card-body-table-produtos');
+    let inHTMLtable = ``;
 
-    inHTMLtable = `<tr>
-                        <th class="text-center">${d['codigo']}</th>
-                        <td>${d['descricao']}</td>
-                        <td>${d['quantidade']}</td>
-                        <td>${d['valor']}</td>
-                    </tr>`;
-
+    inHTMLtable = ` <table class="table mb-0 table-striped table-bordered table-produtos-consulta">
+                        <thead>
+                            <tr>    
+                                <th>Cód.</th>
+                                <th>Descrição</th>
+                                <th>Qtd.</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body-produtos">
+                        <tr>
+                            <th class="text-center">${d['codigo']}</th>
+                            <td>${d['descricao']}</td>
+                            <td>${d['quantidade']}</td>
+                            <td>${d['valor']}</td>
+                        </tr>
+                        </tbody>
+                    </table>`;
                     
-
-    table.innerHTML = inHTMLtable;
+    cardTable.innerHTML = inHTMLtable;
 
 }
 
