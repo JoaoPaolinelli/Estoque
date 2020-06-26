@@ -98,7 +98,7 @@
     </footer>
     <script>
         let registrar = document.getElementById('registrar');
-        if (localStorage.getItem('cadastro') == null) {
+        if (localStorage.getItem('cadastro') === null) {
             localStorage.setItem('cadastro', []);
             console.log("A");
         }
