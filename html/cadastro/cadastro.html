@@ -23,7 +23,7 @@
             <div class="container_menu">
                 <div class="row">
                     <div class="col-3">
-                        <a href="../../html/home/home.html">
+                        <a href="../../html/mpsys/mpsys.html">
                             <img src="../../img/logo.png" alt="logo" class="logo">
                         </a>
                     </div>
@@ -125,7 +125,7 @@
                 let strEmpresa = document.getElementById('empresa').value;
                 let strCNPJ = document.getElementById('cnpj').value;
                 let novoCad = {
-                    id: 0, //TEMPORARIO
+                    id: generateUUID(), //TEMPORARIO
                     nome: strNome,
                     username: strUsername,
                     email: strEmail,
@@ -134,16 +134,42 @@
                     CNPJ: strCNPJ,
                     taxa: 0 
                 };
-                objcadastro.cadastro.push(novoCad);
-                
-                // Salvar os dados no localStorage novamente
-                salvaDados(objcadastro);
+
+                if (emailExistente(novoCad)) {
+                    alert("Usuário já cadastrado!");
+                }
+                else {
+                    objcadastro.cadastro.push(novoCad);
+                    salvaDados(objcadastro);
+                    alert("Cadastro realizado com sucesso!");
+                }
             }
 
+
+            // Checar se cadastro já existe
+            function emailExistente(novoCad) {
+                let usuarioJaExiste = false;
+                let objUsuarios = JSON.parse(localStorage.getItem('cadastro')).cadastro;
+                let i = 0;
+                while (i < objUsuarios.length && !usuarioJaExiste) {
+                    console.log(objUsuarios[i].email);
+                    console.log(novoCad.email);
+                    if (objUsuarios[i].email == novoCad.email) {
+                        usuarioJaExiste = true;
+                    }
+                    i++;
+                }
+                return usuarioJaExiste;
+            }
+            
+
+            // Salvar os dados no localStorage
             function salvaDados(dados) {
                localStorage.setItem('cadastro', JSON.stringify(dados));
             }
             
+
+            // le dados do localStorage
             function leDados() {
                 let strDados = localStorage.getItem('cadastro');
                 let objDados = {};
@@ -174,12 +200,13 @@
                                 taxa: 25.0
                             }
                         ]
-
                     };
                 }
                 return objDados; 
             }
 
+
+            // checa se todos os campos foram preenchidos
             function isAllInputsFilled() {
                 if (isEmpty('nome') || isEmpty('username') || isEmpty('email') || isEmpty('senha') || isEmpty(
                         'empresa') || isEmpty('cnpj')) {
@@ -189,6 +216,8 @@
                 }
             }
 
+
+            // checa se o campo está vazio
             function isEmpty(item) {
                 if (document.getElementById(item).value == undefined || document.getElementById(item).value == "" ||
                     document.getElementById(item).length == 0) {
@@ -196,6 +225,25 @@
                 } else {
                     return false;
                 }
+            }
+
+
+            // função para gerar códigos randômicos a serem utilizados como código de usuário
+            // Fonte: https://stackoverflow.com/questions/105034/how-to-create-guid-uuid
+            function generateUUID() { // Public Domain/MIT
+                var d = new Date().getTime();//Timestamp
+                var d2 = (performance && performance.now && (performance.now() * 1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    var r = Math.random() * 16;//random number between 0 and 16
+                    if (d > 0) {//Use timestamp until depleted
+                        r = (d + r) % 16 | 0;
+                        d = Math.floor(d / 16);
+                    } else {//Use microseconds since page-load if supported
+                        r = (d2 + r) % 16 | 0;
+                        d2 = Math.floor(d2 / 16);
+                    }
+                    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+                });
             }
         };
     </script>
