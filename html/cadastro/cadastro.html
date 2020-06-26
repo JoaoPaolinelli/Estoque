@@ -99,7 +99,7 @@
     <script>
         let registrar = document.getElementById('registrar');
         if (localStorage.getItem('cadastro') === null) {
-            localStorage.setItem('cadastro', [{}]);
+            localStorage.setItem('cadastro',JSON.parse({}));
             console.log("A");
         }
 
