@@ -87,7 +87,7 @@ function initTable(){
     let inHTMLtable = '';
     let dados = getAll();
 
-    for (i = 0; i < dados.produtos.length; i++) {
+    for (i = i; i < dados.produtos.length; i++) {
         inHTMLtable += `<tr>
                             <th>${dados.produtos[i].codigo}</th>
                             <td>${dados.produtos[i].descricao}</td>

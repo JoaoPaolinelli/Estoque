@@ -33,3 +33,7 @@
     color: #3F3FBD!important;
     font-weight: bold;
 }
+
+#dropdownProdutos, #dropdownFinanceiros{
+    z-index: 9999;
+}

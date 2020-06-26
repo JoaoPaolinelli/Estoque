@@ -18,7 +18,7 @@ function escreverLista() {
     let inHTMLmodais = '';
     let dados = getAll();
 
-    for (i = 0; i < dados.produtos.length; i++) {
+    for (i = 1; i < dados.produtos.length; i++) {
         inHTMLlista += `<div class="card shadow rounded mb-3">
           <div class="card-body">
               <div class="row">

@@ -64,7 +64,7 @@ function imprimeDados() {
   let strHtml = '';
   let objDados = leDados();
 
-  for (i = 0; i < objDados.produtos.length; i++) {
+  for (i = 1; i < objDados.produtos.length; i++) {
     strHtml += 
       `<tr>
         <td scope="row">${objDados.produtos[i].codigo}</td>
