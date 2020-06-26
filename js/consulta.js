@@ -1,6 +1,3 @@
-// pegar CNPJ da empresa:
-var CNPJdaEmpresa = JSON.parse(localStorage.getItem('dados')).CNPJ;
-
 function existeArmazenado(key) {
     if (localStorage.getItem(key) == null) {
         r = false;
@@ -107,11 +104,11 @@ function escreverLista() {
 }
 
 function getAll() {
-    return JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+    return JSON.parse(localStorage.getItem('db'));
 }
 
 function getDadosByCod(cod) {
-    let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+    let db = JSON.parse(localStorage.getItem('db'));
     let dados = '';
     for (i = 0; i < db.produtos.length; i++) {
         if (db.produtos[i].codigo == cod) {
@@ -122,7 +119,7 @@ function getDadosByCod(cod) {
 }
 
 function getDadosByDesc(desc) {
-    let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+    let db = JSON.parse(localStorage.getItem('db'));
     let dados = '';
     for (i = 0; i < db.produtos.length; i++) {
         if (db.produtos[i].descricao == desc) {
@@ -256,7 +253,7 @@ function consultar() {
     }
 }
 
-if (existeArmazenado(`${CNPJdaEmpresa}`)) {
+if (existeArmazenado('db')) {
     escreverLista();
     document.getElementById('btnConsultar').addEventListener('click', consultar);
 } else {
@@ -265,7 +262,7 @@ if (existeArmazenado(`${CNPJdaEmpresa}`)) {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 h4">
-                                    Não foram encontrados produtos cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
+                                    Não produtos cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
                                 </div>
                             </div>
                         </div>

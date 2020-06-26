@@ -1,21 +1,19 @@
 # Informações do Projeto
-`MPSys / eStoq`  
+`TÍTULO DO PROJETO`  
 
-Trabalho Interdisciplinar - Aplicações Web
+Trabalho Interdisciplinar - Aplicacões Web
 
-`CIÊNCIA DA COMPUTAÇÃO`
+`CURSO`
 
-`1º PERÍODO`
+`SEMESTRE`
 
 ## Participantes
 
 Os membros do grupo são: 
-- Cláudio Manoel Jansen de Oliveira
-- Danniel Henrique Correa Vieira
-- Felipe Tadeu Góes Guimarães
-- João Paolinelli
-- Ludmila Bruna Santos Nascimento
-- Marco Aurélio Silva de Souza Júnior
+- Fulano da Silva
+- Ciclano Albuquerque
+
+> Inclua a lista dos membros da equipe com seus nomes completos.
 
 # Estrutura do Documento
 
