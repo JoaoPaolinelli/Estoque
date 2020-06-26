@@ -8,7 +8,7 @@ svg{
 .container_header 
 {
     
-    padding-left: 2em;
+    padding-left: 3em;
     background-color: rgb(74, 115, 175);
 }
 .container_header a
@@ -17,20 +17,20 @@ svg{
 }
 .container_header .pace2
 {
-    padding-left: 20px;
+    padding-left: 10px;
    
    
 }
 .container_header .pace2 a
 {
     color: rgb(255, 255, 255);
-    padding-right: 120px;
+    padding-right: 80px;
 }
 .logo
 {
     margin-left:3em;
     padding: 20px;
-    width: 60%;
+    width: 18em;
     
 }
 .container_naveg 
@@ -127,4 +127,524 @@ svg{
     text-align: left;
     font-size: 25px;
     font-weight: 400;
+}
+
+@media (min-width: 1200px) 
+{
+    .conteudo
+    {
+        
+        padding-top: 7em;
+    }
+    .conteudo h2
+    {
+        padding-top: 1.9em;
+        max-width: 800px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 23px;
+        font-weight: 8800;
+
+        padding-right: 140px;
+    }
+    .container_intro .introducao
+    {
+        
+        padding-top: 10em;
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(252, 252, 252);
+        padding-left: 13em;
+        padding-right: 5em;
+    }
+}
+ @media (min-width: 1048px) and (max-width: 1199px) 
+{
+    
+    .conteudo
+    {
+        padding-top: 4em;
+    }
+    .conteudo h2
+    {
+        padding-top: 1.9em;
+        max-width: 700px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 22px;
+        font-weight: 7700;
+
+        padding-right: 140px;
+    }
+    .container_intro .introducao
+    {
+        padding-top: 12em;
+        
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(246, 253, 249);
+        padding-left: 6em;
+        padding-right: 1em;
+    }
+}
+
+@media (min-width: 843px) and (max-width: 1447px) 
+{
+    .logo
+    {
+    margin-left:2.9em;
+    padding: 15px;
+    width: 15em;
+    
+    }
+    svg{
+        display: inline-block;
+        font-size: 14px;
+        height: 1em;
+        overflow: visible;
+        vertical-align: -.125em;
+        padding-right: none;
+        
+
+    }
+    
+    .container_naveg 
+    {
+    
+        font-size: 14px;
+        font-weight: 700;
+        padding: 20px;
+        padding-left: 3.2em;
+        color: #1aad0dd8;
+    }
+    .conteudo
+    {
+        padding-top: 2.1em;
+        padding-right: 5em;
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 1.9em;
+        max-width: 700px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 22px;
+        font-weight: 7700;
+
+        padding-right: 140px;
+
+    }
+    .conteudo button
+    { 
+        border-radius: 1em;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        ;
+    }   
+        
+    .container_intro .introducao
+    {
+        font-weight: 450;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-top: 7em;
+        padding-bottom: 1em;
+        padding-top: 14em;
+        font-size: 15px;
+        
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(252, 252, 252);
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+        
+    .pace2 .eMail
+    {
+        padding-right: 20em;
+        
+            
+    }
+}
+@media (min-width: 450px) and (max-width: 844px) 
+{
+    .logo
+    {
+    margin-left:9em;
+    padding: 15px;
+    width: 13em;
+    padding-left: 4px;
+
+    
+    }
+    svg{
+       
+        font-size: 3px;
+        height: 8em;
+        overflow: visible;
+        vertical-align: -.125em;
+        margin: 0px;
+        margin-left: 10em;
+    }
+    
+    .container_naveg 
+    {
+    
+        font-size: 14px;
+        font-weight: 700;
+        padding: 20px;
+        padding-left: 3.2em;
+        color: #1dc9e7d8;
+    }
+    .conteudo
+    {
+        padding-top: 2.1em;
+        padding-right: 5em;
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 1.7em;
+        max-width: 280px;
+        text-align: left;
+        color: rgba(253, 244, 244, 0.945);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .conteudo p
+    { 
+
+        
+        max-width: 250px;
+        text-align: left;
+        color: rgba(253, 244, 244, 0.945);
+        font-size: 15px;
+        
+    }
+    .conteudo button
+    { 
+        border-radius: 1em;
+        border-width: 3px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 2em;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        ;
+    }   
+        
+    .container_intro .introducao
+    {
+        font-weight: 450;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-top: 7em;
+        padding-bottom: 1em;
+        padding-top: 14em;
+        font-size: 15px;
+        
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(43, 16, 75);
+        
+        display: none;
+        font-size: 15px;
+        
+    }
+        
+    .pace2 .eMail
+    {
+        padding-right: 20em;
+        
+            
+    }
+}
+@media (min-width: 300px) and (max-width: 449px)
+{
+    .logo
+    {
+    margin-left:6em;
+    padding: 15px;
+    width: 50%;
+    padding-left: 4px;
+    
+    }
+    .container_header{
+        padding: 0px;
+    }
+    svg{
+        padding: 0;
+        font-size: 5px;
+        height: 3em;
+        overflow: visible;
+        vertical-align: -.125em;
+        padding-left: 2em;
+        justify-items: center;
+        
+        
+    }
+
+    
+    .container_naveg 
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        padding-left: 0.5em;
+       
+    }
+    .container_naveg .parceiro{ 
+        display: none;
+    }
+    
+    .conteudo h2
+    { 
+
+        padding-top: 8em;
+        max-width: 259px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-top:em;
+        max-width: 200px;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .conteudo button
+    { 
+        border-radius: 2rem;
+        border-width: 2px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+        
+        
+    } 
+    .conteudo button a
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 500;
+        font-size: 12px;
+    }  
+        
+    .container_intro .introducao
+    {
+        font-weight: 450;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 10em;
+        padding-bottom: 1em;
+        padding-top: 12em;
+        font-size: 12px;
+        
+    }
+    .container_header .pace2 
+    {
+    
+        display: none;
+    }
+    
+    .banner img
+    {
+        position: absolute;
+        top: 1;
+        left: 1;
+        right: 10;
+        width: 100%;
+        height: 55%;
+        object-fit: cover;
+        opacity: 1;
+    }
+    
+
+}  
+@media (width: 360px)
+{
+    .logo
+    {
+        margin-left:6em;
+        padding: 15px;
+        width: 50%;
+        padding-left: 4px;
+    }
+    .container_header{
+        padding: 0px;
+    }
+    svg{
+        padding: 0;
+        font-size: 5px;
+        height: 3em;
+        overflow: visible;
+        vertical-align: -.125em;
+        padding-left: 2em;
+        justify-items: center;
+        
+        
+    }
+
+    
+    .container_naveg 
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        padding-left: 0.5em;
+       
+    }
+    .container_naveg .parceiro{ 
+        display: none;
+    }
+    
+    .conteudo h2
+    { 
+
+        padding-top: 6em;
+        max-width: 210px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 80px;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .conteudo button
+    { 
+        border-radius: 2rem;
+        border-width: 2px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+        
+        
+    } 
+    .conteudo button a
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 500;
+        font-size: 12px;
+    }  
+        
+    .container_intro .introducao
+    {
+        font-weight: 550;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 10em;
+        padding-bottom: 1em;
+        padding-top: 1em;
+        font-size: 12px;
+        
+    }
+    .container_header .pace2 
+    {
+    
+        display: none;
+    }
+    
+    .banner img
+    {
+        position: absolute;
+        top: 1;
+        left: 1;
+        right: 10;
+        width: 100%;
+        height: 55%;
+        object-fit: cover;
+        opacity: 1;
+    }
+}
+@media  (width: 411px)
+{   
+    .conteudo h2
+    { 
+
+        padding-top: 6em;
+        max-width: 254px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 80px;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+}
+@media (width: 320px)
+{
+    .conteudo h2
+    { 
+
+        padding-top: 6em;
+        max-width: 190px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 80px;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .conteudo button a
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 500;
+        font-size: 12px;
+    }  
 }

@@ -37,3 +37,81 @@
 #dropdownProdutos, #dropdownFinanceiros{
     z-index: 9999;
 }
+.container .kaka{
+    margin: 0px;
+    margin-top: 40%;
+    margin-right: 5%;
+}
+.spaceUhu{
+    margin-left: 5%;
+}
+
+@media (max-width: 1199px) {
+    .logo{
+        
+        padding: 0px;
+        margin: 0px;
+        margin-left: 160%;
+    }
+    .container_naveg{
+        width: 0px;
+        width:100%;
+        margin-right: 8%;
+    }
+    .info{
+        margin: 0px;
+       
+        padding: 0px;
+        padding-right: 17%;
+        
+    }
+    .info{
+        padding-left: 15%;
+        margin-bottom: 2%;
+    }
+    .tabelaNova{
+        position: fixed;
+    }
+    .whaat{
+        
+        width: 20%;
+        
+        
+    }
+    .LOL{
+        border-width: 2%;
+        border-radius: 50%;
+        font-weight: 50%;
+        width: 40%;
+        font-size: small;
+    }
+    .titulo-consulta-home{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 180%;
+        margin-top: 2%;
+    }
+    .oioie{
+        width: 10%;
+    }
+    .danielDeDeus{
+        margin-top: 30%;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo{
+        max-width: 200%;
+        
+        height: 150%;
+    }
+    .whaat{
+        margin-top: 5%;
+        width: 100%;
+    }
+    .danielDeDeus{
+        position: fixed;
+        margin-top: 120%;
+    }
+
+}

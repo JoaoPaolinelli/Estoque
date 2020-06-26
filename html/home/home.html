@@ -7,9 +7,10 @@
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="..\..\css\inclusao.css">
+       <link rel="stylesheet" href="../../css/headerCadastro.css">
     <link rel="stylesheet" href="../../css/home.css">
-    <link rel="stylesheet" href="../../css/header.css">
     <!-- <script src='../js/home.js'></script> -->
     <title>Estoq</title>
 </head>
@@ -35,9 +36,9 @@
                                         Produtos
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownProdutos" id="dropdownProdutos">
-                                        <a class="dropdown-item"
+                                        <a class="dropdown-item oioie"
                                             href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
-                                        <a class="dropdown-item"
+                                        <a class="dropdown-item oioie"
                                             href="../../html/consulta de estoque/consulta.html">Consulta</a>
                                         <a class="dropdown-item" href="#">Vendas</a>
                                         <a class="dropdown-item" href="#">Compras</a>
@@ -111,8 +112,8 @@
         <div class="row">
             <!-- Navegação Rápida e Relevante -->
             <div class="col-8">
-                <div class="row">
-                    <div class="col-3">
+                <div class="row tabelaNova">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                         <div class="nav flex-column nav-pills border rounded bg-custom-lightblue p-2 shadow-sm"
                             id="rapid-relev-tabs" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="rap-rel-produtos-tab" data-toggle="pill"
@@ -134,13 +135,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-8 whaat">
                         <div class="tab-content" id="radid-relev-tabContent">
                             <div class="tab-pane fade show active" id="rap-rel-produtos" role="tabpanel"
                                 aria-labelledby="rap-rel-produtos-tab">
                                 <div class="container">
                                     <div class="form-row sticky-top">
-                                        <div class="form-group col-7">
+                                        <div class="form-group col-xl-5 col-lg-5 col-md-7 col-sm-12">
                                             <div class="input-group">
 
                                                 <input type="text" class="form-control shadow" id="consulta">
@@ -152,31 +153,33 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group col-5">
-                                            <button class="btn btn-primary shadow" id="btnConsultar"
-                                                type="submit">Consultar no Estoque</button>
+                                        <div class="form-group col-xl-5 col-lg-5 col-md-5 col-sm-10">
+                                            <button class="LOL btn btn-primary shadow col-md-6 col-sm-12" id="btnConsultar"
+                                                type="submit">Consultar</button>
                                         </div>
                                     </div>
-                                    <h3 class="titulo-consulta-home">Produtos</h3>
-                                    <div class="card">
-                                        <div class="card-body p-0" id="card-body-table-produtos">
-                                            <table class="table mb-0 table-striped table-bordered table-produtos-consulta">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Cód.</th>
-                                                        <th>Descrição</th>
-                                                        <th>Qtd.</th>
-                                                        <th>Preço</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-produtos">
-                                                    <tr>
-                                                        <th class="text-center" colspan="4">Sem consulta...</th>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <div class="spaceUhu">
+                                        <h3 class="titulo-consulta-home">Produtos</h3>
+                                        <div class="card-x-small">
+                                            <div class="card p-2" id="card-body-table-produtos">
+                                                <table class="table mb-0 table-striped table-bordered table-produtos-consulta">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Cód.</th>
+                                                            <th>Descrição</th>
+                                                            <th>Qtd.</th>
+                                                            <th>Preço</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="table-body-produtos">
+                                                        <tr>
+                                                            <th class="text-center" colspan="4">Sem consulta...</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div>    
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="rap-rel-vendas" role="tabpanel"
@@ -190,71 +193,79 @@
                 </div>
             </div>
             <!-- Dados e Taxas -->
-            <div class="col-4">
-                <div class="card text-center">
-                    <div class="card-header bg-custom-dark text-white pt-2 px-0">
-                        <div class="row">
-                            <div class="col h5 bg-custom-lightblue shadow text-dark">
-                                Taxa
+            
+            <div class="row">
+
+                <div class="container-fluid kaka">
+                    <div class="col-xl-12 col-lg-12 col-md-8 col-sm-12" >
+                        <div class="danielDeDeus">
+                            <div class="card text-center">
+                                <div class="card-header bg-custom-dark text-white pt-10 px-10">
+                                    <div class="row">
+                                        <div class="col h5 bg-custom-lightblue shadow text-dark">
+                                            Taxa
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-previous-month pr-0">
+                                            <p class="mb-0">
+                                                Mês anterior
+                                            </p>
+                                            <h4>
+                                                <span class="badge badge-danger shadow">
+                                                    - 0 <small class="h5">%</small>
+                                                </span>
+                                                </h1>
+                                        </div>
+                                        <div class="col col-current-month px-0">
+                                            <p class="m-0 font-weight-bold">
+                                                Mês Atual
+                                            </p>
+                                            <h1>
+                                                <span class="badge badge-light shadow">
+                                                    0 <small class="h5">%</small>
+                                                </span>
+                                            </h1>
+                                        </div>
+                                        <div class="col col-next-month pl-0">
+                                            <p class="mb-0">
+                                                Próximo mês
+                                            </p>
+                                            <h4>
+                                                <span class="badge badge-success shadow">
+                                                    + 0 <small class="h5">%</small>
+                                                </span>
+                                                </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <table class="table mb-0 table-striped table-bordered table-dark">
+                                        <tbody>
+                                            <tr>
+                                                <td>Dado 1</td>
+                                                <th scope="row"> X </th>
+                                            </tr>
+                                            <tr>
+                                                <td>Dado 2</td>
+                                                <th scope="row"> Y </th>
+                                            </tr>
+                                            <tr>
+                                                <td>Dado 3</td>
+                                                <th scope="row"> Z </th>
+                                            </tr>
+                                            <tr>
+                                                <td>Dado 4</td>
+                                                <th scope="row"> W </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col col-previous-month pr-0">
-                                <p class="mb-0">
-                                    Mês anterior
-                                </p>
-                                <h4>
-                                    <span class="badge badge-danger shadow">
-                                        - 0 <small class="h5">%</small>
-                                    </span>
-                                    </h1>
-                            </div>
-                            <div class="col col-current-month px-0">
-                                <p class="m-0 font-weight-bold">
-                                    Mês Atual
-                                </p>
-                                <h1>
-                                    <span class="badge badge-light shadow">
-                                        0 <small class="h5">%</small>
-                                    </span>
-                                </h1>
-                            </div>
-                            <div class="col col-next-month pl-0">
-                                <p class="mb-0">
-                                    Próximo mês
-                                </p>
-                                <h4>
-                                    <span class="badge badge-success shadow">
-                                        + 0 <small class="h5">%</small>
-                                    </span>
-                                    </h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        <table class="table mb-0 table-striped table-bordered table-dark">
-                            <tbody>
-                                <tr>
-                                    <td>Dado 1</td>
-                                    <th scope="row"> X </th>
-                                </tr>
-                                <tr>
-                                    <td>Dado 2</td>
-                                    <th scope="row"> Y </th>
-                                </tr>
-                                <tr>
-                                    <td>Dado 3</td>
-                                    <th scope="row"> Z </th>
-                                </tr>
-                                <tr>
-                                    <td>Dado 4</td>
-                                    <th scope="row"> W </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    </div>    
                 </div>
-            </div>
+            </div>        
         </div>
     </main>
 

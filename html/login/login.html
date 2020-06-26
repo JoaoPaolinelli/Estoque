@@ -17,17 +17,15 @@
         <div class="container-fluid">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 logo">
-                        <a href="../../html/mpsys/mpsys.html">
-                            <img src="../../img/logo2.png" alt="logo" class="logo">
-                        </a>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 logo">
+                        <img src="../../img/logo2.png" alt="logo" class="logo" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 formulario">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 formulario">
                     <form id='login'>
                         <div class="form-group">
                             <label for="email">E-mail</label>
@@ -46,7 +44,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
                         <p class="cadastro">
-                            Ainda não possui uma conta? <a href="../../html/cadastro/cadastro.html"> Faça o cadastro agora. </a>
+                            Ainda não possui uma conta?<br> <a href="../../html/cadastro/cadastro.html"> Faça o cadastro agora. </a>
                         </p>
                     </form>
                 </div>
@@ -55,17 +53,18 @@
     </header>
     <main></main>
     <footer>
-        <div class="footer2020">
-            <h6>Copyright MYSYS 2020</h6>
-        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-1 ">
+                    <div class="footer2020"></div>
+                        <h6>Copyright MYSYS 2020</h6>
+                    </div>
+                </div>
+            </div>
+        </div>            
     </footer>
     <script>
-        // Recupera lista de cadastrados em localStorage
-        var db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
-        
-
-        // Verifica se email e senha batem com os registrados em fakedb_login.js
-        let verificaLoginDB_Login = (email, senha, i) => {
+        let verificaLoginDB_Login = (email, senha) => {
             if((db_login.dados[i].email == email && db_login.dados[i].senha == senha)){
                 return true;
             }
@@ -74,9 +73,8 @@
             }
         }
 
-
-        // Verifica se email e senha batem coms os registrados em localStorage
-        let verificaLoginDB_Cadastro = (email, senha, i) => {
+        let verificaLoginDB_Cadastro = (email, senha) => {
+            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
             if((db_cadastros.cadastro[i].email == email && db_cadastros.cadastro[i].senha == senha)){
                 return true;
             }
@@ -85,33 +83,7 @@
             }
         }
 
-        
         login.onsubmit = (e) => {
-
-            let i = 0;
-            let credenciaisValidas = false;
-            let item = db_cadastros.cadastro;
-            while(!credenciaisValidas && i < item.length) {
-                credenciaisValidas = verificaLoginDB_Cadastro(email.value, senha.value, i);
-                i++;
-            } 
-
-            if(credenciaisValidas) {
-                let dados = JSON.stringify(db_cadastros.cadastro[i-1]);
-                localStorage.setItem('dados',dados);
-                sessionStorage.setItem('log_in',0);
-                window.location.href = "../../html/home/home.html";
-            }
-            else {
-                let error = `<p id="emailHelp" class="form-text text-danger">Crendenciais Inválidas.</p>`;
-                document.getElementById('emailHelp').outerHTML = error;
-            }
-            
-            e.preventDefault();
-
-
-/*
-
             for(i = 0; i < db_login.dados.length; i++){
                 if(verificaLoginDB_Login(email.value, senha.value)){
                     let dados = JSON.stringify(db_login.dados[i]);
@@ -121,6 +93,7 @@
                 }
             }
 
+            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
             for(i = 0; i < db_cadastros.cadastro.length; i++){
                 if(verificaLoginDB_Cadastro(email.value, senha.value)){
                     let dados = JSON.stringify(db_cadastros.cadastro[i]);
@@ -129,8 +102,10 @@
                     window.location.href = "../../html/home/home.html";
                 }
             }
-*/           
-
+           
+            let error = `<p id="emailHelp" class="form-text text-danger">Crendencias Inválidas.</p>`;
+            document.getElementById('emailHelp').outerHTML = error;
+            e.preventDefault();
 
         }
     </script>
