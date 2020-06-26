@@ -99,13 +99,14 @@
     <script>
         let registrar = document.getElementById('registrar');
         if (localStorage.getItem('cadastro') === null) {
-            localStorage.setItem('cadastro',JSON.parse({
-                                                        "cadastro":[
-                                                            {
+            let value = {
+                "cadastro": [
+                    {
 
-                                                            }
-                                                        ]
-                                                       }));
+                    }
+                ]
+            };
+            localStorage.setItem('cadastro',JSON.stringify(value));
             console.log("A");
         }
 
