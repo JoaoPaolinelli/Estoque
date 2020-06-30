@@ -64,7 +64,11 @@
         </div>            
     </footer>
     <script>
-        let verificaLoginDB_Login = (email, senha) => {
+        // Recupera lista de cadastrados em localStorage
+        var db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
+
+        // Verifica se email e senha batem com os registrados em fakedb_login.js
+        let verificaLoginDB_Login = (email, senha, i) => {
             if((db_login.dados[i].email == email && db_login.dados[i].senha == senha)){
                 return true;
             }
@@ -73,8 +77,8 @@
             }
         }
 
-        let verificaLoginDB_Cadastro = (email, senha) => {
-            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
+        // Verifica se email e senha batem coms os registrados em localStorage
+        let verificaLoginDB_Cadastro = (email, senha, i) => {
             if((db_cadastros.cadastro[i].email == email && db_cadastros.cadastro[i].senha == senha)){
                 return true;
             }
@@ -84,29 +88,26 @@
         }
 
         login.onsubmit = (e) => {
-            for(i = 0; i < db_login.dados.length; i++){
-                if(verificaLoginDB_Login(email.value, senha.value)){
-                    let dados = JSON.stringify(db_login.dados[i]);
-                    localStorage.setItem('dados',dados);
-                    sessionStorage.setItem('log_in',0);
-                    window.location.href = "../../html/home/home.html";
-                }
-            }
+            let i = 0;
+            let credenciaisValidas = false;
+            let item = db_cadastros.cadastro;
+            while(!credenciaisValidas && i < item.length) {
+                credenciaisValidas = verificaLoginDB_Cadastro(email.value, senha.value, i);
+                i++;
+            } 
 
-            let db_cadastros = JSON.parse(localStorage.getItem('cadastro'));
-            for(i = 0; i < db_cadastros.cadastro.length; i++){
-                if(verificaLoginDB_Cadastro(email.value, senha.value)){
-                    let dados = JSON.stringify(db_cadastros.cadastro[i]);
-                    localStorage.setItem('dados',dados);
-                    sessionStorage.setItem('log_in',0);
-                    window.location.href = "../../html/home/home.html";
-                }
+            if(credenciaisValidas) {
+                let dados = JSON.stringify(db_cadastros.cadastro[i-1]);
+                localStorage.setItem('dados',dados);
+                sessionStorage.setItem('log_in',0);
+                window.location.href = "../../html/home/home.html";
             }
-           
-            let error = `<p id="emailHelp" class="form-text text-danger">Crendencias Inválidas.</p>`;
-            document.getElementById('emailHelp').outerHTML = error;
+            else {
+                let error = `<p id="emailHelp" class="form-text text-danger">Crendenciais Inválidas.</p>`;
+                document.getElementById('emailHelp').outerHTML = error;
+            }
+            
             e.preventDefault();
-
         }
     </script>
 
