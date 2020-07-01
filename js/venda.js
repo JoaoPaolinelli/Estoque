@@ -17,41 +17,42 @@ function leDados() {
 
 function pesquisarProdutos() {
   let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
-  let dados = '';
+  let dados = [];
   let pesq = document.querySelector('#campo_pesquisa').value;
   for (i = 0; i < db.produtos.length; i++) {
       if (db.produtos[i].descricao.includes(pesq)) {
-          dados = push(db.produtos[i]);
-          console.log(dados);
-
-
-      }
-      else {
-        console.log('não achou nada');
-      }
+          dados.push(db.produtos[i]);
+          
+          
+        }
+        else {
+          console.log('não achou nada');
+        }
   }
-  imprimeDados();
+  console.log(dados);
+  imprimeDados(dados);
 }
 
 
-function imprimeDados() {
-  let tabela = document.getElementById('corpoTabela');
+function imprimeDados(dados) {
+  let tabela = document.querySelector('#corpoTabela');
   let strHtml = '';
-  let objDados = leDados();
+  console.log('dados.lenght = ' + dados.length);
 
-  for (i = 1; i < objDados.produtos.length; i++) {
-    strHtml += 
-      `<tr>
-        <td scope="row">${objDados.produtos[i].codigo}</td>
-        <td>${objDados.produtos[i].descricao}</td>
-        <td>${objDados.produtos[i].quantidade}</td>
-        <td>${objDados.produtos[i].valor}</td>
-        <td>${objDados.produtos[i].categoria}</td>
-        <td>${objDados.produtos[i].armazem}</td>
-        <td>${objDados.produtos[i].estante}</td>
-        <td>${objDados.produtos[i].prateleira}</td>
-        <td>${objDados.produtos[i].posicao}</td>
-      </tr>`
+  for (i = 0; i < dados.length; i++) {
+    strHtml += `
+      <tr>
+        <td scope="row">${dados[i].codigo}</td>
+        <td>${dados[i].descricao}</td>
+        <td>${dados[i].quantidade}</td>
+        <td>${dados[i].valor}</td>
+        <td>${dados[i].categoria}</td>
+        <td>${dados[i].armazem}</td>
+        <td>${dados[i].estante}</td>
+        <td>${dados[i].prateleira}</td>
+        <td>${dados[i].posicao}</td>
+      </tr>
+      `
   }
 
   tabela.innerHTML = strHtml;

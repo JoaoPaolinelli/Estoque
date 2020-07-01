@@ -12,8 +12,15 @@ function leDados() {
   else {
     objDados = {
       produtos: [
-        { descricao: "", codigo: "", categoria: "", quantidade: "", 
-        valor: "", armazem: "", estante: "", prateleira: "", posicao: "" }
+        { descricao: "", 
+          codigo: "",
+          categoria: "", 
+          quantidade: "", 
+          valor: "", 
+          armazem: "", 
+          estante: "", 
+          prateleira: "", 
+          posicao: "" }
       ]
     }
   }
@@ -57,6 +64,8 @@ function incluirProdutos() {
 
   // Atualiza os dados da tela
   imprimeDados();
+
+  alert("Produto cadastrado com sucesso!");
 }
 
 function imprimeDados() {
