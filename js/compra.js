@@ -10,6 +10,7 @@ window.onload = () => {
 function mostrarSalvos() {
     let tabela = document.querySelector("#corpoTabela");
     let compras = JSON.parse(localStorage.getItem("compras"));
+    compras = compras.compras;
     let html = "";
 
     if (hasCompras() && !compraIsEmpty()) {
@@ -24,27 +25,27 @@ function mostrarSalvos() {
                     <td>${compras[i].quantidade}</td>
                     <td>${compras[i].valor}</td>
                     <td>${compras[i].data}</td>
-                    <th><i class="fas fa-check" id="${compras[i].cod}"-check></i></th>
-                    <th><i class="fas fa-cross" id="${compras[i].cod}-close"></i></th>
+                    <th><i class="fas fa-check text-success " id="${compras[i].cod}"-check></i></th>
+                    <th><i class="fas fa-times text-danger" id="${compras[i].cod}-close"></i></th>
                 </tr>
                 `;
             console.log(compras[i]);
         }
-        
+
         tabela.innerHTML = html;
 
         for (i = 0; i < compras.length; i++) {
             let valor = compras[i];
             let checkV = `${valor}-check`;
             let closeV = `${valor}-close`;
-            document.getElementById(checkV).addEventListener("click", function () {
-                fazerPesquisaSalva(valor);
+            /* document.getElementById(checkV).addEventListener("click", function () {
+                confirmarCompra(valor);
             });
             document.getElementById(closeV).addEventListener("click", function () {
                 deletarCompra(valor);
-            });
-        } 
-    } else{
+            }); */
+        }
+    } else {
         html = `
             <tr>
                 <td colspan="9">
@@ -60,6 +61,7 @@ function mostrarSalvos() {
 function salvarCompra() {
     if (hasCompras()) {
         if (isAllFilled()) {
+            //let query = document.querySelector("#codigo").value;
             let compras = leCompras();
             compras = addCompra(compras);
             localStorage.setItem("compras", JSON.stringify(compras));
@@ -71,6 +73,7 @@ function salvarCompra() {
             "compras": []
         };
         localStorage.setItem("compras", JSON.stringify(value));
+        mostrarSalvos();
     }
 }
 
@@ -96,6 +99,14 @@ function addCompra(compras) {
     return compras;
 }
 
+function deletarCompra(){
+
+}
+
+function confirmarCompra(){
+
+}
+
 function hasCompras() {
     has = true;
     obj = JSON.parse(localStorage.getItem("compras"));
@@ -105,10 +116,10 @@ function hasCompras() {
     return has;
 }
 
-function compraIsEmpty(){
+function compraIsEmpty() {
     has = false;
     obj = JSON.parse(localStorage.getItem("compras"));
-    if(obj.compras.length == 0){
+    if (obj.compras.length == 0) {
         has = true;
     }
     return has;
