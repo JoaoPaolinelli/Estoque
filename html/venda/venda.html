@@ -21,17 +21,73 @@
     </div>
 
     <!-- //! Ícone do menu diminuindo quando clicado-->
-    <button class="btn btn-light menu" type="button" data-toggle="collapse" data-target="#menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
+    <button class="btn btn-light" id="menu" type="button" data-toggle="collapse" data-target="#menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
       <i class="fas fa-bars menu_icon"></i>
     </button>
     <div class="collapse menu-collapse" id="menu-collapse">
       <div class="card card-body menu_collapse">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        <div class="container_naveg">
+          <div class="col-xl-12 col-lg-12 col-md-12">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Produtos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownProdutos">
+                  <a class="dropdown-item" href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
+                  <a class="dropdown-item" href="../../html/consulta de estoque/consulta.html">Consulta</a>
+                  <a class="dropdown-item" href="#">Vendas</a>
+                  <a class="dropdown-item" href="#">Compras</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Financeiro
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownFinanceiros">
+                  <a class="dropdown-item" href="#">Relatórios</a>
+                  <a class="dropdown-item" href="#">Saldo</a>
+                  <a class="dropdown-item" href="#">Nota Fiscal</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Externos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownExternos">
+                  <a class="dropdown-item" href="#">Transporte</a>
+                  <a class="dropdown-item" href="#">Empresas Parceiras</a>
+                  <a class="dropdown-item" href="#">SEBRAE</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" type="button" id="dropdownConfig" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-cog"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownConfig">
+                  <a class="dropdown-item" href="#">Conta</a>
+                  <a class="dropdown-item" href="#">Opções</a>
+                  <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     </div>
     
 
     <div class="dados">
+      
       <div class="usuario" id="username">
         <i class="far fa-user"></i>
         USUARIO de nome grande
@@ -56,10 +112,10 @@
       <span id="codigo">Código</span>
       <span id="quantidade">Quantidade</span>
       <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
-      <button class="btn btn-danger cancela" id="cancela"><i class="fas fa-times"></i></button>
+      <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
     </div>
     <div class="pesquisa">
-      <input class="form-control" type="search" id="campo_pesquisa" placeholder="Pesquisar...">
+      <input oninput="pesquisarProdutos()" class="form-control" type="search" id="campo_pesquisa" placeholder="Pesquisar...">
       <button class="btn btn-secondary executa_pesquisa"><i class="fas fa-search"></i></button>
     </div>
     <div class="resultados_pesquisa">
@@ -72,8 +128,9 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
   <script src="../../js/header.js"></script>
-  <script src="../../js/home.js"></script>
+  <!--<script src="../../js/home.js"></script>-->
   <script src='../../js/fakedb_login.js'></script>
+  <script src='../../js/venda.js'></script>
 </body>
 
 </html>

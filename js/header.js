@@ -9,9 +9,9 @@ window.onload = () => {
     console.log(empresa);
     console.log(taxa);
 
-    document.getElementById('username').innerHTML = username;
-    document.getElementById('empresa').innerHTML = empresa;
-    document.getElementById('taxa').innerHTML = taxa;
+    document.getElementById('username').innerHTML = `<i class="far fa-user"></i> ${username}`;
+    document.getElementById('empresa').innerHTML = `<i class="fas fa-briefcase"></i> ${empresa}`;
+    document.getElementById('taxa').innerHTML = `<i class="fas fa-percent"></i> ${taxa}`;
 
 
 }
