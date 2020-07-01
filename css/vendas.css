@@ -132,6 +132,9 @@ main .pesquisa {
 .pesquisa #campo_pesquisa {
   grid-column: 1 / 6;
 }
+.resultados_pesquisa {
+  overflow: scroll;
+}
 
 .container_naveg a
 {

@@ -103,6 +103,7 @@
 
   <main>
     <h3 class="titulo">Vendas</h3>
+    
     <div class="box_descricao">
       <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
       <span id="valor">$$$</span>
@@ -112,12 +113,28 @@
       <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
       <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
     </div>
+
     <div class="pesquisa">
       <input oninput="pesquisarProdutos()" class="form-control" type="search" id="campo_pesquisa" placeholder="Pesquisar...">
       <button class="btn btn-secondary executa_pesquisa"><i class="fas fa-search"></i></button>
     </div>
     <div class="resultados_pesquisa">
-
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor Aq.</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Armazém</th>
+            <th scope="col">Estante</th>
+            <th scope="col">Prateleira</th>
+            <th scope="col">Posição</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+      </table>
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
