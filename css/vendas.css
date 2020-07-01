@@ -1,8 +1,11 @@
 body {
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #F8F7E3;
+  background-color: #EBECF0;
   display: grid;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
@@ -21,7 +24,7 @@ header {
 .logo .imagem_logo {
   max-height: 16rem;
 }
-.menu {
+#menu {
   grid-area: c;
   text-align: center;
   margin-top: auto;
@@ -118,7 +121,6 @@ main h3 {
 }
 .box_descricao #cancela {
   grid-area: g;
-  background-color: #c44343;
 }
 
 main .pesquisa {
