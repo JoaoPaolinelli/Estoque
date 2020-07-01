@@ -113,7 +113,6 @@ function getAll() {
     return JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
 }
 
-
 window.onload = () => {
     if (existeArmazenado(`${CNPJdaEmpresa}`)) {
         initTable();

@@ -22,7 +22,7 @@ header {
   grid-area: a;
 }
 .logo .imagem_logo {
-  max-height: 30px;
+  max-height: 16rem;
 }
 #menu {
   grid-area: c;
@@ -33,6 +33,11 @@ header {
   background: rgb(63,160,255);
   background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
 }
+
+#navbar-colapse {
+  grid-area: c;
+}
+
 #menu-collapse{
   grid-area: d;
 }
@@ -44,8 +49,7 @@ header {
   grid-template-columns: repeat(6,minmax(0, 1fr));
   grid-template-areas: 
   "a a b b c c";
-  text-align: center;
-  font-size: smaller;  
+  text-align: center;  
   background: rgb(63,160,255);
   background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
   min-height: 50px;
@@ -130,4 +134,11 @@ main .pesquisa {
 }
 .resultados_pesquisa {
   overflow: scroll;
+}
+
+.container_naveg a
+{
+    padding-top: 1em;
+    padding-right: 2rem;
+    color: rgb(63, 63, 189);
 }
