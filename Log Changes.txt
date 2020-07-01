@@ -1,4 +1,0 @@
-Página inicial:
- - Correção de erros de ortografia
- - Botão "Experimente Grátis" inteiro leva para o cadastro
-	
