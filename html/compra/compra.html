@@ -130,9 +130,10 @@
                         <div class="col-5">
                             <label for="l_fornecedor"><strong>Fornecedor</strong></label>
                             <select class="custom-select" id="fornecedores">
-                                <option value="0">Brahma</option>
-                                <option value="1">Nestlé</option>
-                                <option value="2">Friboi</option>
+                                <option selected>Fornecedores</option>
+                                <option value="0">Friboi</option>
+                                <option value="1">Renner</option>
+                                <option value="2">Omo</option>
                                 <option value=""><a href="#">Adicionar fornecedor...</a></option>
                             </select>
                         </div>
@@ -148,11 +149,11 @@
                         <div class="col-md-3 mb-3">
                             <label for="l_categoria"><strong>Categoria</strong></label>
                             <select class="custom-select" id="categoria">
-                                <option selected disabled value="">Categoria...</option>
-                                <option>Alimentos</option>
-                                <option>Vestuário</option>
-                                <option>Limpeza</option>
-                                <option>Adicionar categoria...</option>
+                                <option selected disabled>Categoria...</option>
+                                <option value="alimentos">Alimentos</option>
+                                <option value="vestuário">Vestuário</option>
+                                <option value="limpeza">Limpeza</option>
+                                <option value="0">Adicionar categoria...</option>
                             </select>
                         </div>
         
@@ -173,7 +174,7 @@
                         <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-3"></div>
                         <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6">
                             <label for="l_valor"><strong>Data de aquisição</strong></label>
-                            <input type="date" class="form-control" id="valor" value="0.00">
+                            <input type="date" class="form-control" id="data">
                         </div>
                         <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-3"></div>
                     </div>
@@ -207,7 +208,9 @@
                                 <th scope="col">Quantidade</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">Data</th>
+                                <th scope="col" colspan="2">Opções</th>
                             </tr>
+                            
                         </thead>
                         <tbody id="corpoTabela"></tbody>
                     </table>
@@ -234,7 +237,6 @@
     <!-- Dados de Login (Fake) -->
     <script src='../../js/fakedb_login.js'></script>
     <script src="../../js/header.js"></script>
-    <script src="../../js/inclusao.js"></script>
     <script src="../../js/compra.js"></script>
 </body>
 
