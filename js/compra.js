@@ -1,5 +1,15 @@
+var CNPJdaEmpresa = JSON.parse(localStorage.getItem('dados')).CNPJ;
+
 window.onload = () => {
-    mostrarSalvos();
+    if(!hasCompras()){
+        let value = {
+            "compras": []
+        };
+        localStorage.setItem("compras", JSON.stringify(value));
+        mostrarSalvos();
+    }else{
+        mostrarSalvos();
+    }
 
     document.querySelector("#btnRegistrar").addEventListener("click", (e) => {
         e.preventDefault();
@@ -17,7 +27,7 @@ function mostrarSalvos() {
         console.log("A");
         for (i = 0; i < compras.length; i++) {
             html += `
-                <tr>
+                <tr id="${compras[i].id}-linha">
                     <td>${compras[i].cod}</td>
                     <td>${compras[i].descricao}</td>
                     <td>${compras[i].fornecedor}</td>
@@ -25,8 +35,8 @@ function mostrarSalvos() {
                     <td>${compras[i].quantidade}</td>
                     <td>${compras[i].valor}</td>
                     <td>${compras[i].data}</td>
-                    <th><i class="fas fa-check text-success " id="${compras[i].cod}"-check></i></th>
-                    <th><i class="fas fa-times text-danger" id="${compras[i].cod}-close"></i></th>
+                    <th><i class="fas fa-check text-success " id="${compras[i].id}-check"></i></th>
+                    <th><i class="fas fa-times text-danger" id="${compras[i].id}-close"></i></th>
                 </tr>
                 `;
             console.log(compras[i]);
@@ -35,15 +45,15 @@ function mostrarSalvos() {
         tabela.innerHTML = html;
 
         for (i = 0; i < compras.length; i++) {
-            let valor = compras[i];
+            let valor = compras[i].id;
             let checkV = `${valor}-check`;
             let closeV = `${valor}-close`;
-            /* document.getElementById(checkV).addEventListener("click", function () {
+            document.getElementById(checkV).addEventListener("click", function () {
                 confirmarCompra(valor);
             });
             document.getElementById(closeV).addEventListener("click", function () {
                 deletarCompra(valor);
-            }); */
+            });
         }
     } else {
         html = `
@@ -65,6 +75,7 @@ function salvarCompra() {
             let compras = leCompras();
             compras = addCompra(compras);
             localStorage.setItem("compras", JSON.stringify(compras));
+            mostrarSalvos();
         } else {
             alert("Preencha todas os campos.");
         }
@@ -73,7 +84,7 @@ function salvarCompra() {
             "compras": []
         };
         localStorage.setItem("compras", JSON.stringify(value));
-        mostrarSalvos();
+        
     }
 }
 
@@ -86,6 +97,7 @@ function addCompra(compras) {
     let data = document.querySelector("#data").value;
     let fornecedor = document.querySelector("#fornecedores").value;
     let novo = {
+        id: generateUUID(),
         cod: codigo, //TEMPORARIO
         descricao: descricao,
         categoria: categoria,
@@ -99,12 +111,26 @@ function addCompra(compras) {
     return compras;
 }
 
-function deletarCompra(){
+function deletarCompra(id){
+    let elem = document.querySelector(`#${id}-linha`);
+    elem.parentNode.removeChild(elem);
 
+    let compras = JSON.parse(localStorage.getItem("compras"));
+    let index = compras.indexOf(id);
+    compras.splice(index, 1);
+    localStorage.setItem("compras",JSON.stringify(compras));
 }
 
 function confirmarCompra(){
+    if(localStorage.getItem(`${CNPJdaEmpresa}`) === null){
+        dados = {
+            produtos: [
+            ]
+          };
+        localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(dados));
+    }
 
+    
 }
 
 function hasCompras() {
@@ -148,4 +174,22 @@ function isEmpty(item) {
     } else {
         return false;
     }
+}
+
+// função para gerar códigos randômicos a serem utilizados como código de usuário
+// Fonte: https://stackoverflow.com/questions/105034/how-to-create-guid-uuid
+function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();//Timestamp
+    var d2 = (performance && performance.now && (performance.now() * 1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16;//random number between 0 and 16
+        if (d > 0) {//Use timestamp until depleted
+            r = (d + r) % 16 | 0;
+            d = Math.floor(d / 16);
+        } else {//Use microseconds since page-load if supported
+            r = (d2 + r) % 16 | 0;
+            d2 = Math.floor(d2 / 16);
+        }
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
 }
