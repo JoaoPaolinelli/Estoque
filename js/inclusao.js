@@ -39,6 +39,7 @@ function incluirProdutos() {
   let strEstante = document.getElementById('estante').value;
   let strPrateleira = document.getElementById('prateleira').value;
   let strPosicao = document.getElementById('posicao').value;
+  let valorInicial = strQuantidade;
   let novoItem = {
     descricao: strDescricao, 
     codigo: strCodigo, 
@@ -48,7 +49,8 @@ function incluirProdutos() {
     armazem: strArmazem, 
     estante: strEstante, 
     prateleira: strPrateleira, 
-    posicao: strPosicao
+    posicao: strPosicao,
+    valorInicial 
   };
   objDados.produtos.push(novoItem);
 
