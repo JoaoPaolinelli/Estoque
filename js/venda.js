@@ -78,6 +78,8 @@ function preencherBox(n) {
     <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
   `;
   box.innerHTML = novoBox;
+
+  document.querySelector('#confirma').addEventListener('click',()=>{vender(des,cod)});
 }
 
 
@@ -90,21 +92,50 @@ function acr(n) {
 }
 
 
-/*
-function vender(n) {
-  let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
-  
-  let des = document.querySelector(`#descricao`).innerHTML;
-  let cod = document.querySelector(`#codigo`).innerHTML;
 
-  let dados = [];
-  let pesq = document.querySelector('#campo_pesquisa').value;
-  for (i = 0; i < db.produtos.length; i++) {
-      if (db.produtos[i].descricao.includes(pesq)) {
-          dados.push(db.produtos[i]);
-        }
+function vender(des,cod) {
+  let objEstoque = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+  let arrItens = objEstoque.produtos;
+  let qtd = document.querySelector('#quantidade').value;
+  for(let i = 0 ; i < arrItens.length ; i++) {
+    if(arrItens[i].descricao == des && arrItens[i].codigo == cod) {
+      arrItens[i].quantidade = arrItens[i].quantidade - qtd;
+      console.log(arrItens[i].quantidade);
+      if(arrItens[i].quantidade <= 0) {
+        delete arrItens[i];
+      }
+    }
   }
+  localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(objEstoque));
+  imprimeTabela(arrItens);
+}
+
+
+/*
+function limparTela() {
+
+
+
+  <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
+  <span id="valor">
+    <strong>Valor: </strong>
+    <span id="valor"></span>
+  </span>
+  <span id="descricao">
+    <strong>Descrição: </strong>
+  </span>
+  <span id="codigo">
+    <strong>Código: </strong>
+  </span>
+  
+  <div class="quantidade">
+    <strong>Quantidade: <br></strong>
+    <input id="quantidade" value="0">
+    <button id="mais">+</button>
+    <button id="menos">-</button>
+  </div>
+  
+  <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
+  <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
 }
 */
-
-console.log("fim do código");
