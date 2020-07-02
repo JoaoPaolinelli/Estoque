@@ -22,7 +22,7 @@ header {
   grid-area: a;
 }
 .logo .imagem_logo {
-  max-height: 16rem;
+  max-height: 30px;
 }
 #menu {
   grid-area: c;
@@ -38,7 +38,7 @@ header {
   grid-area: c;
 }
 
-#menu-collapse{
+#menu-collapse {
   grid-area: d;
 }
 
@@ -59,6 +59,7 @@ header {
   margin-top: auto;
   margin-bottom: auto;
   padding: 5px;
+  font-size: small;
 }
 .dados .usuario {
   grid-area: a;
@@ -106,9 +107,13 @@ main h3 {
 .box_descricao #codigo {
   grid-area: c;
 }
-.box_descricao #quantidade {
+.box_descricao .quantidade {
   grid-area: e;
 }
+#quantidade {
+  width: 50px;
+}
+
 #confirma, #cancela {
   border-radius: 10px;
   margin-top: auto;
@@ -122,6 +127,9 @@ main h3 {
 .box_descricao #cancela {
   grid-area: g;
 }
+
+
+
 
 main .pesquisa {
   display: grid;

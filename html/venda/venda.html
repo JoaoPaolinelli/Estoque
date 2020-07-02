@@ -106,10 +106,17 @@
     
     <div class="box_descricao">
       <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
-      <span id="valor">$$$</span>
-      <span id="descricao">Descricao</span>
-      <span id="codigo">Código</span>
-      <span id="quantidade">Quantidade</span>
+      <span id="valor"><strong>Valor: </strong></span>
+      <span id="descricao"><strong>Descrição: </strong></span>
+      <span id="codigo"><strong>Código: </strong></span>
+      
+      <div class="quantidade">
+        <strong>Quantidade: <br></strong>
+        <input id="quantidade" value="0">
+        <button id="mais">+</button>
+        <button id="menos">-</button>
+      </div>
+      
       <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
       <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
     </div>
