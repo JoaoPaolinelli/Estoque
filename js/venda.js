@@ -80,6 +80,8 @@ function preencherBox(n) {
   box.innerHTML = novoBox;
 
   document.querySelector('#confirma').addEventListener('click',()=>{vender(des,cod)});
+
+
 }
 
 
@@ -102,7 +104,8 @@ function vender(des,cod) {
       arrItens[i].quantidade = arrItens[i].quantidade - qtd;
       console.log(arrItens[i].quantidade);
       if(arrItens[i].quantidade <= 0) {
-        delete arrItens[i];
+        arrItens.splice(i,1);
+        console.log(arrItens);
       }
     }
   }
@@ -111,31 +114,33 @@ function vender(des,cod) {
 }
 
 
-/*
+
+document.querySelector('#cancela').addEventListener('click',limparTela);
 function limparTela() {
 
-
-
-  <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
-  <span id="valor">
-    <strong>Valor: </strong>
-    <span id="valor"></span>
-  </span>
-  <span id="descricao">
-    <strong>Descrição: </strong>
-  </span>
-  <span id="codigo">
-    <strong>Código: </strong>
-  </span>
-  
-  <div class="quantidade">
-    <strong>Quantidade: <br></strong>
-    <input id="quantidade" value="0">
-    <button id="mais">+</button>
-    <button id="menos">-</button>
-  </div>
-  
-  <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
-  <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
+  let boxDesc = document.querySelector('.box_descricao');
+  let telaLimpa = `
+    <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
+    <span id="valor">
+      <strong>Valor: </strong>
+      <span id="valor"></span>
+    </span>
+    <span id="descricao">
+      <strong>Descrição: </strong>
+    </span>
+    <span id="codigo">
+      <strong>Código: </strong>
+    </span>
+    
+    <div class="quantidade">
+      <strong>Quantidade: <br></strong>
+      <input id="quantidade" value="0">
+      <button id="mais">+</button>
+      <button id="menos">-</button>
+    </div>
+    
+    <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
+    <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
+  `;
+  boxDesc.innerHTML = telaLimpa;
 }
-*/
