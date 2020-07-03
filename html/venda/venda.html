@@ -8,82 +8,110 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/vendas.css">
+  <link rel="stylesheet" href="../../css/sidebar.css">
   <!-- <script src='../js/home.js'></script> -->
+  <script src='../../js/sidenav.js'></script>
   <title>Vender Produtos</title>
 </head>
 
 <body>
   <!--Cabeçalho-->
   <header>
+    
     <a href="../../html/home/home.html" class="logo navbar-brand">
       <img src="../../img/logo2.png" alt="logo" class="imagem_logo">
     </a>
-    <!-- //! Ícone do menu diminuindo quando clicado-->
-    <nav class="navbar navbar-expand-md" id="navbar-colapse">
-      <button class="btn btn-light navbar-toggler menu" type="button" data-toggle="collapse"
-        data-target="#menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
-        <i class="fas fa-bars menu_icon"></i>
-      </button>
+
+    <button onclick="openNav()" class="btn btn-light menu" id="menu" type="button" data-toggle="collapse"
+      data-target=".menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
+      <i class="fas fa-bars menu_icon"></i>
+    </button>
 
 
-      <div class="collapse navbar-collapse menu-collapse" id="menu-collapse">
-        <div class="container_naveg">
-          <div class="col-12">
-            <ul class="nav justify-content-center mr-auto">
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Produtos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownProdutos" id="dropdownProdutos">
-                  <a class="dropdown-item oioie" href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
-                  <a class="dropdown-item oioie" href="../../html/consulta de estoque/consulta.html">Consulta</a>
-                  <a class="dropdown-item" href="../../html/venda/venda.html">Vendas</a>
-                  <a class="dropdown-item" href="../../html/compra/compra.html">Compras</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Financeiro
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownFinanceiros" id="dropdownFinanceiros">
-                  <a class="dropdown-item" href="#">Relatórios</a>
-                  <a class="dropdown-item" href="#">Saldo</a>
-                  <a class="dropdown-item" href="#">Nota Fiscal</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Serviços</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Externos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownExternos">
-                  <a class="dropdown-item" href="#">Transporte</a>
-                  <a class="dropdown-item" href="#">Empresas Parceiras</a>
-                  <a class="dropdown-item" href="#">SEBRAE</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link" type="button" id="dropdownConfig" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-cog"></i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownConfig">
-                  <a class="dropdown-item" href="#">Conta</a>
-                  <a class="dropdown-item" href="#">Opções</a>
-                  <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
-                </div>
-              </li>
-            </ul>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <div class="accordion" id="accordionExample">
+        <div class="produtos" id="produtos">
+          <h2 class="mb-0">
+            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_produtos" aria-expanded="false" aria-controls="menu_produtos">
+              Produtos
+            </a>
+          </h2>
+        </div>
+        <div id="menu_produtos" class="collapse" aria-labelledby="produtos" data-parent="#accordionExample">
+          <div class="card-body">
+            <a class="dropdown-item oioie" href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
+            <a class="dropdown-item oioie" href="../../html/consulta de estoque/consulta.html">Consulta</a>
+            <a class="dropdown-item" href="../../html/venda/venda.html">Vendas</a>
+            <a class="dropdown-item" href="../../html/compra/compra.html">Compras</a>
+          </div>
+        </div>
+
+
+        <div class="Financeiro" id="Financeiro">
+          <h2 class="mb-0">
+            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_Financeiro" aria-expanded="false" aria-controls="menu_Financeiro">
+              Financeiro
+            </a>
+          </h2>
+        </div>
+        <div id="menu_Financeiro" class="collapse" aria-labelledby="Financeiro" data-parent="#accordionExample">
+          <div class="card-body">
+            <a class="dropdown-item" href="#">Relatórios</a>
+            <a class="dropdown-item" href="#">Saldo</a>
+            <a class="dropdown-item" href="#">Nota Fiscal</a>
+          </div>
+        </div>
+
+
+        <div class="externos" id="externos">
+          <h2 class="mb-0">
+            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_externos" aria-expanded="false" aria-controls="menu_externos">
+              Externos
+            </a>
+          </h2>
+        </div>
+        <div id="menu_externos" class="collapse" aria-labelledby="externos" data-parent="#accordionExample">
+          <div class="card-body">
+            <a class="dropdown-item" href="#">Transporte</a>
+            <a class="dropdown-item" href="#">Empresas Parceiras</a>
+            <a class="dropdown-item" href="#">SEBRAE</a>
+          </div>
+        </div>
+
+
+        <div class="servicos" id="servicos">
+          <h2 class="mb-0">
+            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_servicos" aria-expanded="false" aria-controls="menu_servicos">
+              Serviços
+            </a>
+          </h2>
+        </div>
+        <div id="menu_servicos" class="collapse" aria-labelledby="servicos" data-parent="#accordionExample">
+          <div class="card-body">
+            <a class="dropdown-item" href="#">Indisponível</a>
+          </div>
+        </div>
+
+
+        <div class="configuracoes" id="configuracoes">
+          <h2 class="mb-0">
+            <a class="naav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_configuracoes" aria-expanded="false" aria-controls="menu_configuracoes">
+              <i class="fas fa-cog"></i>
+            </a>
+          </h2>
+        </div>
+        <div id="menu_configuracoes" class="collapse" aria-labelledby="configuracoes" data-parent="#accordionExample">
+          <div class="card-body">
+            <a class="dropdown-item" href="#">Conta</a>
+            <a class="dropdown-item" href="#">Opções</a>
+            <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
           </div>
         </div>
       </div>
+    </div>
 
-    </nav>
 
     <div class="dados lead">
       <div class="usuario" id="username" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
@@ -99,7 +127,10 @@
         TAXA(?)
       </div>
     </div>
+
   </header>
+
+
 
   <main>
     <h3 class="titulo">Vendas</h3>
@@ -120,8 +151,8 @@
       <div class="quantidade">
         <strong>Quantidade: <br></strong>
         <input id="quantidade" value="0">
-        <button id="mais">+</button>
-        <button id="menos">-</button>
+        <button class="btn btn-light" id="mais"><i class="fas fa-plus"></i></button>
+        <button class="btn btn-light" id="menos"><i class="fas fa-minus"></i></button>
       </div>
       
       <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
