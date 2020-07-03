@@ -12,6 +12,9 @@ body {
 /*************
 /** CABEÇALHO
 /*************/
+.cabecalho-desktop {
+  display: none;
+}
 header {
   display: grid;
   height: auto;
@@ -46,11 +49,6 @@ header {
   grid-area: d;
 
 }
-
-.container_naveg a {
-  color: rgb(63, 63, 189);
-}
-
 
 
 /******************
@@ -118,6 +116,9 @@ main h3 {
   "f f g g";
   grid-gap: 10px;
   background-color: #f8f8ef;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box_descricao img {
@@ -192,3 +193,28 @@ main .pesquisa {
 }
 
 
+@media screen and (min-width: 700px) {
+
+  body {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  /*************
+  /** CABEÇALHO
+  /*************/
+  #menu {
+    display: none;
+  }
+  .cabecalho-desktop {
+    display: grid;
+    grid-column: span 4;
+  }
+  .cabecalho-desktop .container_menu {
+    width: 100%;
+  }
+  .cabecalho-desktop a{
+    padding-bottom: 0;
+  }
+}
