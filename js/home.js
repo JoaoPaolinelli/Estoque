@@ -128,7 +128,7 @@ window.onload = () => {
         let cardTable= document.getElementById('card-body-table-produtos');
         let strError = `<div class="row">
                             <div class="col-12 h4">
-                                Não produtos há cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
+                                Não existem produtos cadastrados :( Cadastre clicando <a href="../../html/inclusao em estoque/inclusao.html"> aqui </a>. 
                             </div>
                         </div>`;
 

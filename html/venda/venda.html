@@ -4,237 +4,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vender Produtos</title>
+
   <!-- CSS Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/vendas.css">
-  <link rel="stylesheet" href="../../css/sidenav.css">
-  <!-- <script src='../js/home.js'></script> -->
-  <script src='../../js/sidenav.js'></script>
-  <title>Vender Produtos</title>
+  <link rel="stylesheet" href="../../css/venda.css">
+  
+  <!-- script para carregar cabeçalho de "standAloneHeader.html" em "header"-->
+  <link rel="stylesheet" href="../../css/standAloneHeader.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#standAloneHeader_V2").load("../../html/standaloneHeader.html/standAloneHeaderV2.html"); 
+    });
+  </script>
+
 </head>
 
 <body>
-  <!--Cabeçalho mobile-->
-  <header>
-    
-    <a href="../../html/home/home.html" class="logo navbar-brand">
-      <img src="../../img/logo2.png" alt="logo" class="imagem_logo">
-    </a>
-
-    <button onclick="openNav()" class="btn btn-light menu" id="menu" type="button" data-toggle="collapse"
-      data-target=".menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
-      <i class="fas fa-bars menu_icon"></i>
-    </button>
-
-
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-      <div class="accordion accordion" id="accordionExample">
-        <div class="produtos" id="produtos">
-          <h2 class="mb-0">
-            <a class="nav-link text-left" type="button" data-toggle="collapse" data-target="#menu_produtos" aria-expanded="false" aria-controls="menu_produtos">
-              Produtos
-            </a>
-          </h2>
-        </div>
-        <div id="menu_produtos" class="collapse" aria-labelledby="produtos" data-parent="#accordionExample">
-          <div class="card-body">
-            <a href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
-            <a href="../../html/consulta de estoque/consulta.html">Consulta</a>
-            <a href="../../html/venda/venda.html">Vendas</a>
-            <a href="../../html/compra/compra.html">Compras</a>
-          </div>
-        </div>
-
-
-        <div class="Financeiro" id="Financeiro">
-          <h2 class="mb-0">
-            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_Financeiro" aria-expanded="false" aria-controls="menu_Financeiro">
-              Financeiro
-            </a>
-          </h2>
-        </div>
-        <div id="menu_Financeiro" class="collapse" aria-labelledby="Financeiro" data-parent="#accordionExample">
-          <div class="card-body">
-            <a class="dropdown-item" href="#">Relatórios</a>
-            <a class="dropdown-item" href="#">Saldo</a>
-            <a class="dropdown-item" href="#">Nota Fiscal</a>
-          </div>
-        </div>
-
-
-        <div class="externos" id="externos">
-          <h2 class="mb-0">
-            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_externos" aria-expanded="false" aria-controls="menu_externos">
-              Externos
-            </a>
-          </h2>
-        </div>
-        <div id="menu_externos" class="collapse" aria-labelledby="externos" data-parent="#accordionExample">
-          <div class="card-body">
-            <a class="dropdown-item" href="#">Transporte</a>
-            <a class="dropdown-item" href="#">Empresas Parceiras</a>
-            <a class="dropdown-item" href="#">SEBRAE</a>
-          </div>
-        </div>
-
-
-        <div class="servicos" id="servicos">
-          <h2 class="mb-0">
-            <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_servicos" aria-expanded="false" aria-controls="menu_servicos">
-              Serviços
-            </a>
-          </h2>
-        </div>
-        <div id="menu_servicos" class="collapse" aria-labelledby="servicos" data-parent="#accordionExample">
-          <div class="card-body">
-            <a class="dropdown-item" href="#">Indisponível</a>
-          </div>
-        </div>
-
-
-        <div class="configuracoes" id="configuracoes">
-          <h2 class="mb-0">
-            <a class="naav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_configuracoes" aria-expanded="false" aria-controls="menu_configuracoes">
-              <i class="fas fa-cog"></i>
-            </a>
-          </h2>
-        </div>
-        <div id="menu_configuracoes" class="collapse" aria-labelledby="configuracoes" data-parent="#accordionExample">
-          <div class="card-body">
-            <a class="dropdown-item" href="#">Conta</a>
-            <a class="dropdown-item" href="#">Opções</a>
-            <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!--Cabeçalho tablet/desktop-->
-    <div class="container-flex cabecalho-desktop">
-      <div class="container_menu">
-        <div class="row">
-
-          <!-- A IDEIA POR TRAS DO NAV É POSSIBILITAR O USUÁRIO ACESSAR O QUE PRECISA EM 5 CLIQUE OU MENOS -->
-          <div class="container_naveg">
-            <div class="col-12">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Produtos
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownProdutos" id="dropdownProdutos">
-                    <a class="dropdown-item oioie" href="../../html/inclusao em estoque/inclusao.html">Cadastros</a>
-                    <a class="dropdown-item oioie" href="../../html/consulta de estoque/consulta.html">Consulta</a>
-                    <a class="dropdown-item" href="../../html/venda/venda.html">Vendas</a>
-                    <a class="dropdown-item" href="../../html/compra/compra.html">Compras</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Financeiro
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownFinanceiros" id="dropdownFinanceiros">
-                    <a class="dropdown-item" href="#">Relatórios</a>
-                    <a class="dropdown-item" href="#">Saldo</a>
-                    <a class="dropdown-item" href="#">Nota Fiscal</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Serviços</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Externos
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownExternos">
-                    <a class="dropdown-item" href="#">Transporte</a>
-                    <a class="dropdown-item" href="#">Empresas Parceiras</a>
-                    <a class="dropdown-item" href="#">SEBRAE</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link" type="button" id="dropdownConfig" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cog"></i>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownConfig">
-                    <a class="dropdown-item" href="#">Conta</a>
-                    <a class="dropdown-item" href="#">Opções</a>
-                    <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dados lead">
-      <div class="usuario" id="username" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
-        <i class="far fa-user"></i>
-          USUARIO de nome grande
-      </div>
-      <div class="empresa" id="empresa" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
-        <i class="fas fa-briefcase"></i>
-        EMPRESA de nome gigantesco
-      </div>
-      <div class="taxa" id="taxa" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
-        <i class="fas fa-percent"></i>
-        TAXA(?)
-      </div>
-    </div>
-
-  </header>
-
-
+  
+  <header id="standAloneHeader_V2"></header>
 
   <main>
-    <h3 class="titulo">Vendas</h3>
+    <h3 class="titulo">Vendas</h3> <!-- Título -->
     
+    <!-- Caixa com os dados do produto selecionado -->
+    <!-- Dados preenchidos com venda.js -->
     <div class="box_descricao">
+      <!-- imagem temporariamente fake do produto -->
       <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
-      <span id="valor">
-        <strong>Valor: </strong>
-        <span id="valor"></span>
+      <span id="valor"> <!-- valor do produto -->
+        <strong>Valor unitário: </strong>
+        <span id="valor"></span> <!-- valor preenchido pelo js -->
       </span>
-      <span id="descricao">
-        <strong>Descrição: </strong>
+      <span id="descricao"> <!-- descrição do produto -->
+        <strong>Descrição: </strong> <!-- valor preenchido pelo js -->
       </span>
-      <span id="codigo">
-        <strong>Código: </strong>
+      <span id="codigo"> <!-- código do produto -->
+        <strong>Código: </strong> <!-- valor preenchido pelo js -->
       </span>
-      
-      <div class="quantidade">
+      <div class="quantidade"> <!-- quantidade a ser vendida -->
         <strong>Quantidade: <br></strong>
-        <input id="quantidade" value="0">
-        <button class="btn btn-light" id="mais"><i class="fas fa-plus"></i></button>
-        <button class="btn btn-light" id="menos"><i class="fas fa-minus"></i></button>
+        <input id="quantidade" value="0"> <!-- campo para alterar qtd a ser vendida -->
+        <button class="btn btn-light" id="mais"> <!-- botão "+" para alterar quantidade -->
+          <i class="fas fa-plus"></i> <!-- https://fontawesome.com/icons/plus?style=solid -->
+        </button> 
+        <button class="btn btn-light" id="menos"> <!-- botão "-" para alterar quantidade -->
+          <i class="fas fa-minus"></i> <!-- https://fontawesome.com/icons/minus?style=solid -->
+        </button> 
       </div>
-      
+      <!-- Botões confirma venda e limpa ou cancela -->
       <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
       <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
     </div>
 
     <div class="pesquisa">
+      <!-- campo para inserir pesquisa, exibe resultados a cada tecla pressionada -->
       <input oninput="pesquisarProdutos()" class="form-control" type="search" id="campo_pesquisa" placeholder="Pesquisar...">
-      <button class="btn btn-secondary executa_pesquisa"><i class="fas fa-search"></i></button>
+      <button class="btn btn-secondary executa_pesquisa"> <!-- botão executar pesquisa -->
+        <i class="fas fa-search"></i> <!-- https://fontawesome.com/icons/search?style=solid -->
+      </button>
     </div>
+    <!-- tabela de resultados da pesquisa -->
     <div class="resultados_pesquisa">
-      <table class="table table-responsive table-striped">
-        <thead>
-          <tr>
+      <!-- https://getbootstrap.com/docs/4.5/content/tables/#hoverable-rows -->
+      <table class="table table-responsive table-hover">
+        <thead> <!-- cabeçalho da tabela -->
+          <tr> <!-- uma linha -->
             <th scope="col">Código</th>
             <th scope="col">Descrição</th>
             <th scope="col">Quantidade</th>
-            <th scope="col">Valor Aq.</th>
+            <th scope="col">Valor Un.</th>
             <th scope="col">Categoria</th>
             <th scope="col">Armazém</th>
             <th scope="col">Estante</th>
@@ -242,13 +84,11 @@
             <th scope="col">Posição</th>
           </tr>
         </thead>
-        <tbody id="corpoTabela"></tbody>
+        <tbody id="corpoTabela"></tbody> <!-- preenchido por venda.js -->
       </table>
     </div>
   </main>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
+  <!-- bootstrap sem a linha do jquery -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
@@ -257,10 +97,10 @@
   </script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
-  <script src="../../js/header.js"></script>
-  <!-- <script src="../../js/home.js"></script> -->
-  <script src='../../js/fakedb_login.js'></script>
+  <!-- manipulação de dados -->
   <script src='../../js/venda.js'></script>
+  <!-- menu lateral -->
+  <script src='../../js/sidenav.js'></script>
 </body>
 
 </html>

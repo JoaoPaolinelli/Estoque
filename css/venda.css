@@ -1,89 +1,11 @@
 body {
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #EBECF0;
+  background-color: #F8F7E3;
   display: grid;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-}
-
-
-/*************
-/** CABEÇALHO
-/*************/
-.cabecalho-desktop {
-  display: none;
-}
-header {
-  display: grid;
-  height: auto;
-  grid-template-areas: 
-  "a a b b b c"
-  "d d d d d d"
-  "e e e e e e";
-}
-
-.logo {
-  height: auto;
-  grid-area: a;
-}
-
-.logo .imagem_logo {
-  max-height: 30px;
-}
-
-#menu {
-  grid-area: c;
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: rgb(63,160,255);
-  background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
-}
-
-#navbar-colapse {
-}
-
-.menu-collapse {
-  grid-area: d;
-
-}
-
-
-/******************
-/** TARJA COLORIDA
-/******************/
-.dados {
-  grid-area: e;
-  margin-top: 15px;
-  display: grid;
-  grid-template-columns: repeat(6,minmax(0, 1fr));
-  grid-template-areas: 
-  "a a b b c c";
-  text-align: center;  
-  background: rgb(63,160,255);
-  background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
-  min-height: 50px;
-  border-radius: 10px;
-}
-
-.usuario, .empresa, .taxa{
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 5px;
-  font-size: small;
-}
-.dados .usuario {
-  grid-area: a;
-}
-
-.dados .empresa {
-  grid-area: b;
-}
-
-.dados .taxa {
-  grid-area: c;
 }
 
 
@@ -193,6 +115,9 @@ main .pesquisa {
 }
 
 
+/*****************
+/** MEDIA QUERIES
+/*****************/
 @media screen and (min-width: 700px) {
 
   body {
@@ -201,23 +126,4 @@ main .pesquisa {
     max-width: 100%;
   }
 
-  /*************
-  /** CABEÇALHO
-  /*************/
-  #menu {
-    display: none;
-  }
-  .container_naveg a {
-    color: rgb(63, 63, 189);
-  }
-  .cabecalho-desktop {
-    display: grid;
-    grid-column: span 4;
-  }
-  .cabecalho-desktop .container_menu {
-    width: 100%;
-  }
-  .cabecalho-desktop a{
-    padding-bottom: 0;
-  }
 }

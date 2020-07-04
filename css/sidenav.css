@@ -5,12 +5,12 @@
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  right: 0;
+  right: 0; /* Stay at the right */
   background: rgb(63,160,255);
   background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
@@ -24,7 +24,6 @@
 }
 
 /* When you mouse over the navigation links, change their color */
-
 .accordion a:hover {
   color: rgb(63, 63, 189);
   background-color: rgb(128, 191, 255);
