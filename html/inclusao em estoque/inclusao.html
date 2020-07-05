@@ -39,21 +39,26 @@
     <!--FORMULÁRIO-->
     <div class="form-row">
       <!-- input descrição -->
-      <div class="col mb-3"> 
+      <div class="col-12 col-sm-9 mb-3"> 
         <label for="l_descricao"><strong>Descrição</strong></label>
         <input type="text" class="form-control" id="descricao">
+      </div>
+
+      <div class="col-12 col-sm-3 mb-3"> 
+        <label for="l_data_validade"><strong>Data de Validade</strong></label>
+        <input type="date" class="form-control" id="descricao">
       </div>
 
     </div>
 
 
     <div class="form-row"> <!-- nova linha -->
-      <div class="col-md-3 mb-3"> 
+      <div class="col-sm-3 mb-3"> 
         <label for="l_codigo"><strong>Código</strong></label>
         <input type="text" class="form-control" id="codigo" value="XX.XX.XX">
       </div>
 
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_categoria"><strong>Categoria</strong></label>
         <select class="custom-select" id="categoria">
           <option selected disabled value="">Categoria...</option>
@@ -65,12 +70,12 @@
       </div>
 
 
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_quantidade"><strong>Quantidade</strong></label>
         <input type="number" class="form-control" id="quantidade" value="0">
       </div>
 
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_valor"><strong>Valor unitário</strong></label>
         <input type="number" class="form-control" id="valor" value="0.00">
       </div>
@@ -79,19 +84,19 @@
 
 
     <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_armazem">Armazém</label>
         <input type="text" class="form-control" id="armazem">
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_estante">Estante</label>
         <input type="text" class="form-control" id="estante">
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_prateleira">Prateleira</label>
         <input type="text" class="form-control" id="prateleira">
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-sm-3 mb-3">
         <label for="l_posicao">Posição</label>
         <input type="text" class="form-control" id="posicao">
       </div>
