@@ -27,6 +27,52 @@
 
 
 <body>
+    <div class="modal fade" id="modalConfirmarCompra" tabindex="-1" role="dialog" aria-labelledby="modalConfirmarCompra" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="l_armazem">Preço de Venda:</label>
+                        <input type="number" class="form-control" id="preco" placeholder="R$">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="l_armazem">Armazém</label>
+                        <input type="text" class="form-control" id="armazem">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="l_estante">Estante</label>
+                        <input type="text" class="form-control" id="estante">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="l_prateleira">Prateleira</label>
+                        <input type="text" class="form-control" id="prateleira">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="l_posicao">Posição</label>
+                        <input type="text" class="form-control" id="posicao">
+                    </div>
+                
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+              <div id="modalConfirmar">
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="modalBtnConfirmar">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!--Cabeçalho-->
     <header id="standAloneHeader_V2"></header>
@@ -55,10 +101,10 @@
                             <label for="l_fornecedor"><strong>Fornecedor</strong></label>
                             <select class="custom-select" id="fornecedores">
                                 <option selected>Fornecedores</option>
-                                <option value="0">Friboi</option>
-                                <option value="1">Renner</option>
-                                <option value="2">Omo</option>
-                                <option value=""><a href="#">Adicionar fornecedor...</a></option>
+                                <option value="friboi">Friboi</option>
+                                <option value="renner">Renner</option>
+                                <option value="omo">Omo</option>
+                                <option><a href="#">Adicionar fornecedor...</a></option>
                             </select>
                         </div>
 
@@ -93,8 +139,8 @@
                         </div>
         
                         <div class="col-md-3 mb-3">
-                            <label for="l_valor"><strong>Valor aquisição un</strong></label>
-                            <input type="number" class="form-control" id="valor" value="0.00">
+                            <label for="l_valor"><strong>Valor Aquisição</strong></label>
+                            <input type="number" class="form-control" id="valor" placeholder="R$ 0.00">
                         </div>
         
                     </div>
@@ -130,7 +176,7 @@
                                 <th scope="col">Fornecedor</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Quantidade</th>
-                                <th scope="col">Valor Un.</th>
+                                <th scope="col">Valor Aq.</th>
                                 <th scope="col">Data</th>
                                 <th scope="col" colspan="2">Opções</th>
                             </tr>
