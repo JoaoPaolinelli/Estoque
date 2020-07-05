@@ -15,6 +15,7 @@
   
   <!-- scripts para carregar cabeçalho de "standAloneHeader.html" em "header"-->
     <link rel="stylesheet" href="../../css/standAloneHeader.css">
+    <!-- substituir o jQuery do bootstrap por esse -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script> 
       $(function(){
@@ -37,17 +38,17 @@
     </div>
     <!--FORMULÁRIO-->
     <div class="form-row">
-      <div class="col mb-3">
+      <!-- input descrição -->
+      <div class="col mb-3"> 
         <label for="l_descricao"><strong>Descrição</strong></label>
         <input type="text" class="form-control" id="descricao">
-
       </div>
 
     </div>
 
 
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
+    <div class="form-row"> <!-- nova linha -->
+      <div class="col-md-3 mb-3"> 
         <label for="l_codigo"><strong>Código</strong></label>
         <input type="text" class="form-control" id="codigo" value="XX.XX.XX">
       </div>
