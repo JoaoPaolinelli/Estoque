@@ -7,7 +7,7 @@ window.onload = () => {
         };
         localStorage.setItem("compras", JSON.stringify(value));
     }
-
+    isCompraUndefined();
     mostrarSalvos();
 
     document.querySelector("#btnRegistrar").addEventListener("click", (e) => {
@@ -150,7 +150,7 @@ function confirmarCompra(id){
 function hasCompras() {
     has = true;
     obj = JSON.parse(localStorage.getItem("compras"));
-    isCompraUndefined();
+    //
     if (localStorage.getItem("compras") === null) {
         has = false;
     }
