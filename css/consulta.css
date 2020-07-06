@@ -5,8 +5,22 @@ body {
 }
 
 .consultaFuck h1{
-    font-size: 250%;
+    font-size: 250%;    
 }
+
+.border-color-mpsys {
+    border: 3px solid transparent!important;
+    padding: .5rem;
+
+    /* https://dev.to/rumansaleem/gradient-borders-with-css-3mnk */ 
+    background: 
+        linear-gradient(to right, white, white), 
+        radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+
+}
+
 
 @media (max-width: 800px) {
 

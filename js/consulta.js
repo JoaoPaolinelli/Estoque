@@ -19,40 +19,49 @@ function escreverLista() {
     let dados = getAll();
 
     for (i = 1; i < dados.produtos.length; i++) {
-        inHTMLlista += `<div class="card shadow rounded mb-3">
+        perc = Math.round((dados.produtos[i].quantidade/dados.produtos[i].valorInicial)*100);
+        inHTMLlista += `<div class="card shadow rounded m-3">
           <div class="card-body">
-              <div class="row">
-                  <div class="col-2 text-center my-auto">
-                      <div class="h5">
-                          <b id="">
+              <div class="row align-items-center">
+                  <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 my-auto">
+                      <div class="h5 font-weight-bold border rounded-pill border-color-mpsys" id="${dados.produtos[i].id}-cod">
                               ${dados.produtos[i].codigo}
-                          </b>
                       </div>
                   </div>
-                  <div class="col-7 border-left border-right">
+                  <div class="col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12">
                       <div class="h4">
-                          <p id="">
+                          <p id="${dados.produtos[i].id}-descricao" class="text-decoration-underline">
                           ${dados.produtos[i].descricao}
                           </p>
                       </div>
                   </div>
-                  <div class="col-3">
-                      <div class="row">
-                          <div class="col-6 " id="">Qtd.: ${dados.produtos[i].quantidade}</div>
-                          <div class="col-6" id="">Preço: ${dados.produtos[i].valor}</div>
+                  <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12 border rounded border-dark">
+                      <div class="row justify-content-center">
+                          <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${dados.produtos[i].id}-quantidade"> <div class="d-inline font-weight-bold">Qtd.:</div> ${dados.produtos[i].quantidade}</div>
+                          <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${dados.produtos[i].id}-valor"><div class="d-inline font-weight-bold">Preço: R$ </div> ${dados.produtos[i].valor}</div>
                           
                       </div>
                       <div class="row"> 
-                        <div class="col-12" id="">Categoria: ${dados.produtos[i].categoria}</div>
+                        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 font-weight-bold " id="${dados.produtos[i].id}-categoria">
+                            <div class="d-inline font-weight-bolder ">Categoria:</div>  ${dados.produtos[i].categoria}</div>
                       </div>
                       <div class="row">
-                          <div class="col-12 text-center">
+                          <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center ">
                               <a href="#" class="text-decoration-none badge badge-primary" data-toggle="modal"
                               data-target="#modal${dados.produtos[i].codigo}">
                                   + Detalhes
                               </a>
                           </div>
                       </div>
+                  </div>
+                  <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 mt-3">
+                    <div class="row>
+                        <div class="col-6">
+                            <p id="${dados.produtos[i].id}-percentual" class="h3 font-weight-bold">
+                                ${perc} %
+                            </p>
+                        </div>
+                    </div>
                   </div>
               </div>
           </div>
@@ -104,6 +113,8 @@ function escreverLista() {
     lista.innerHTML = inHTMLlista;
     modais.innerHTML = inHTMLmodais;
 
+    colorPerc();
+
 }
 
 function getAll() {
@@ -139,41 +150,51 @@ function escreveConsulta(d) {
     let inHTMLlista;
     let inHTMLmodais;
 
+    perc = Math.round((d['quantidade']/d['valorInicial'])*100);
 
-    inHTMLlista = `<div class="card shadow rounded mb-3">
+    inHTMLlista = 
+    `<div class="card shadow rounded m-3">
           <div class="card-body">
-              <div class="row">
-                  <div class="col-2 text-center my-auto">
-                      <div class="h5">
-                          <b id="">
-                              ${d['codigo']}
-                          </b>
+              <div class="row align-items-center">
+                  <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 my-auto">
+                      <div class="h5 font-weight-bold border rounded-pill border-color-mpsys" id="${d['id']}-cod">
+                        ${d['codigo']}
                       </div>
                   </div>
-                  <div class="col-7 border-left border-right">
+                  <div class="col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12">
                       <div class="h4">
-                          <p id="">
-                          ${d['descricao']}
+                          <p id="${d['id']}-descricao" class="text-decoration-underline">
+                            ${d['descricao']}
                           </p>
                       </div>
                   </div>
-                  <div class="col-3">
-                      <div class="row">
-                          <div class="col-6 " id="">Qtd.: ${d['quantidade']}</div>
-                          <div class="col-6" id="">Preço: ${d['valor']}</div>
+                  <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12 border rounded border-dark">
+                      <div class="row justify-content-center">
+                          <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${d['id']}-quantidade"> <div class="d-inline font-weight-bold">Qtd.:</div> ${d['quantidade']}</div>
+                          <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${d['id']}-valor"><div class="d-inline font-weight-bold">Preço: R$ </div> ${d['valor']}</div>
                           
                       </div>
                       <div class="row"> 
-                        <div class="col-12" id="">Categoria: ${d['categoria']}</div>
+                        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 font-weight-bold " id="${d['id']}-categoria">
+                            <div class="d-inline font-weight-bolder ">Categoria:</div>  ${d['categoria']}</div>
                       </div>
                       <div class="row">
-                          <div class="col-12 text-center">
+                          <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center ">
                               <a href="#" class="text-decoration-none badge badge-primary" data-toggle="modal"
                               data-target="#modal${d['codigo']}">
                                   + Detalhes
                               </a>
                           </div>
                       </div>
+                  </div>
+                  <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 mt-3">
+                    <div class="row>
+                        <div class="col-6">
+                            <p id="${d['id']}-percentual" class="h3 font-weight-bold">
+                                ${perc} %
+                            </p>
+                        </div>
+                    </div>
                   </div>
               </div>
           </div>
@@ -224,6 +245,7 @@ function escreveConsulta(d) {
     lista.innerHTML = inHTMLlista;
     modais.innerHTML = inHTMLmodais;
 
+    colorPerc();
 }
 
 function consultar() {
@@ -253,6 +275,19 @@ function consultar() {
         lista.innerHTML = strError;
     }else{
         escreveConsulta(d);
+    }
+}
+
+function colorPerc(){
+    let dados = getAll();
+    for (i = 1; i < dados.produtos.length; i++){
+        let perc = Math.round((dados.produtos[i].quantidade/dados.produtos[i].valorInicial)*100); 
+        if(perc > 50){
+            document.getElementById(`${dados.produtos[i].id}-percentual`).classList.add("text-success");
+        }
+        else{
+            document.getElementById(`${dados.produtos[i].id}-percentual`).classList.add("text-danger");            
+        }
     }
 }
 
