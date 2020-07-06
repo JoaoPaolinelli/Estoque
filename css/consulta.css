@@ -9,7 +9,7 @@ body {
 }
 
 .border-color-mpsys {
-    border: 3px solid transparent!important;
+    border: 5px solid transparent!important;
     padding: .5rem;
 
     /* https://dev.to/rumansaleem/gradient-borders-with-css-3mnk */ 
@@ -21,6 +21,13 @@ body {
 
 }
 
+.codigo {
+    font-size: 1.25rem!important;
+}
+
+.border-thicker {
+    border-width: 3px!important;
+}
 
 @media (max-width: 800px) {
 

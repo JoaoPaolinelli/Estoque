@@ -24,18 +24,18 @@ function escreverLista() {
           <div class="card-body">
               <div class="row align-items-center">
                   <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 my-auto">
-                      <div class="h5 font-weight-bold border rounded-pill border-color-mpsys" id="${dados.produtos[i].id}-cod">
+                      <div class="h5 font-weight-bold badge badge-dark codigo" id="${dados.produtos[i].id}-cod">
                               ${dados.produtos[i].codigo}
                       </div>
                   </div>
                   <div class="col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                      <div class="h4">
-                          <p id="${dados.produtos[i].id}-descricao" class="text-decoration-underline">
+                      <div class="h4 border rounded-pill border-color-mpsys">
+                          <p id="${dados.produtos[i].id}-descricao">
                           ${dados.produtos[i].descricao}
                           </p>
                       </div>
                   </div>
-                  <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12 border rounded border-dark">
+                  <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12 border border-thicker rounded border-secondary">
                       <div class="row justify-content-center">
                           <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${dados.produtos[i].id}-quantidade"> <div class="d-inline font-weight-bold">Qtd.:</div> ${dados.produtos[i].quantidade}</div>
                           <div class="col-6 col-xl-6 col-lg-6 col-md-4 col-sm-4" id="${dados.produtos[i].id}-valor"><div class="d-inline font-weight-bold">Preço: R$ </div> ${dados.produtos[i].valor}</div>
