@@ -34,44 +34,51 @@ function salvaDados(dados) {
 }
 
 function incluirProdutos() {
-  // Ler os dados do localStorage
-  let objDados = leDados();
+  if(isAllFilled()){
+    // Ler os dados do localStorage
+    let objDados = leDados();
 
-  // Incluir um novo contato
-  let strDescricao = document.getElementById('descricao').value;
-  let strCodigo = document.getElementById('codigo').value;
-  let strCategoria = document.getElementById('categoria').value;
-  let strQuantidade = document.getElementById('quantidade').value;
-  let strValor = document.getElementById('valor').value;
-  let strArmazem = document.getElementById('armazem').value;
-  let strEstante = document.getElementById('estante').value;
-  let strPrateleira = document.getElementById('prateleira').value;
-  let strPosicao = document.getElementById('posicao').value;
-  let valorInicial = strQuantidade;
-  let isComprado = false;
-  let novoItem = {
-    id: generateUUID(),
-    descricao: strDescricao, 
-    codigo: strCodigo, 
-    categoria: strCategoria, 
-    quantidade: strQuantidade,
-    valor: strValor, 
-    armazem: strArmazem, 
-    estante: strEstante, 
-    prateleira: strPrateleira, 
-    posicao: strPosicao,
-    valorInicial,
-    isComprado
-  };
-  objDados.produtos.push(novoItem);
+    // Incluir um novo contato
+    let strDescricao = document.getElementById('descricao').value;
+    let strCodigo = document.getElementById('codigo').value;
+    let strCategoria = document.getElementById('categoria').value;
+    let strQuantidade = document.getElementById('quantidade').value;
+    let strValor = document.getElementById('valor').value;
+    let strArmazem = document.getElementById('armazem').value;
+    let strEstante = document.getElementById('estante').value;
+    let strPrateleira = document.getElementById('prateleira').value;
+    let strPosicao = document.getElementById('posicao').value;
+    let valorInicial = strQuantidade;
+    let isComprado = false;
+    let validade = document.getElementById("validade").value;
+    let novoItem = {
+      id: generateUUID(),
+      descricao: strDescricao, 
+      codigo: strCodigo, 
+      categoria: strCategoria, 
+      quantidade: strQuantidade,
+      valor: strValor, 
+      armazem: strArmazem, 
+      estante: strEstante, 
+      prateleira: strPrateleira, 
+      posicao: strPosicao,
+      valorInicial,
+      isComprado,
+      validade
+    };
+    objDados.produtos.push(novoItem);
 
-  // Salvar os dados no localStorage novamente
-  salvaDados(objDados);
+    // Salvar os dados no localStorage novamente
+    salvaDados(objDados);
 
-  // Atualiza os dados da tela
-  imprimeDados();
+    // Atualiza os dados da tela
+    imprimeDados();
 
-  alert("Produto cadastrado com sucesso!");
+    alert("Produto cadastrado com sucesso!");
+  }
+  else{
+    alert("Preencha os campos!");
+  }
 }
 
 function imprimeDados() {
@@ -84,6 +91,7 @@ function imprimeDados() {
       `<tr>
         <td scope="row">${objDados.produtos[i].codigo}</td>
         <td>${objDados.produtos[i].descricao}</td>
+        <td>${objDados.produtos[i].validade}</td>
         <td>${objDados.produtos[i].quantidade}</td>
         <td>${objDados.produtos[i].valor}</td>
         <td>${objDados.produtos[i].categoria}</td>
@@ -111,6 +119,27 @@ function generateUUID() { // Public Domain/MIT
       }
       return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
+}
+
+function isAllFilled() {
+  if (isEmpty('descricao') || isEmpty('codigo') || isEmpty('categoria') || isEmpty('quantidade') || isEmpty(
+          'valor') || isEmpty('armazem') || isEmpty('prateleira') || isEmpty('estante')
+          || isEmpty('posicao') || isEmpty('validade')) {
+      return false;
+  } else {
+      return true;
+  }
+}
+
+// checa se o campo está vazio
+function isEmpty(item) {
+  console.log(document.getElementById(item));
+  if (document.getElementById(item).value == undefined || document.getElementById(item).value == "" ||
+      document.getElementById(item).length == 0) {
+      return true;
+  } else {
+      return false;
+  }
 }
 
 // Configura os botões
