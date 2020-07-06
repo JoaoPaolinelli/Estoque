@@ -12,7 +12,8 @@ function leDados() {
   else {
     objDados = {
       produtos: [
-        { descricao: "", 
+        { id: "",
+          descricao: "", 
           codigo: "",
           categoria: "", 
           quantidade: "", 
