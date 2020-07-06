@@ -112,11 +112,12 @@ function addCompra(compras) {
 function deletarCompra(id){
     let elem = document.getElementById(`${id}-linha`);
     elem.parentNode.removeChild(elem);
-
-    let compras = JSON.parse(localStorage.getItem("compras")).compras;
-    let index = compras.indexOf(id);
-    compras.splice(index, 1);
-    localStorage.setItem("compras",JSON.stringify(compras));
+    let obj = JSON.parse(localStorage.getItem("compras"));
+    let index = obj.compras.indexOf(id);
+   
+    obj.compras.splice(index, 1);
+    
+    localStorage.setItem("compras",JSON.stringify(obj));
 }
 
 function abrirModalConfirmar(id){
