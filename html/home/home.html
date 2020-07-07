@@ -31,17 +31,6 @@
 
     <main>
         
-        <!-- pesquisa -->
-        <div class="pesquisa_rapida">
-            <div class="query">
-                <input type="search" class="form-control campo_pesquisa" placeholder="Pesquisar produtos">
-                <button class="btn btn-outline-info executa_pesquisa"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="tabela_resultados_da_pesquisa">
-                <!-- preencher com JS -->
-            </div>
-        </div>
-
         <!-- botões de atalho -->
         <div class="atalhos">
             <div class="botoes">
@@ -70,6 +59,17 @@
                     <button class="btn btn-outline-primary botao_atalho_desativado" disabled>Opções</button> 
                 </a>
             </div>
+        </div>
+
+        <!-- pesquisa -->
+        <div class="pesquisa_rapida">
+            <div class="query">
+                <input oninput="pesquisarProdutos()" type="search" class="form-control campo_pesquisa" placeholder="Pesquisar produtos">
+                <button class="btn btn-info executa_pesquisa"><i class="fas fa-search"></i></button>
+            </div>
+            <table class="table table-responsive tabela_resultados_da_pesquisa">
+                <!-- preencher com JS -->
+            </table>
         </div>
         <!-- tabelas de informações críticas -->
 

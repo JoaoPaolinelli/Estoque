@@ -123,6 +123,8 @@ function vender(des,cod) {
   alert("Venda realizada com sucesso!");
 }
 
+
+//! NÃO TÁ FUNCIONANDO 
 function limparTela() {
 
   let boxDesc = document.querySelector('.box_descricao');

@@ -38,10 +38,19 @@ main {
 }
 
 .pesquisa_rapida, .atalhos, .tabela_info {
+    
 }
 
 .pesquisa_rapida {
     display: grid;
+    height: auto;
+    overflow: scroll;
+    background-color: #e7e7e3;
+    border: thin solid black;
+    border-radius: 5px;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
 }
 
     .pesquisa_rapida 
@@ -74,12 +83,13 @@ main {
     margin-left: auto;
     margin-right: auto;
     grid-gap: 5px;
-
+    
 }
 
 .botoes a button{
     min-height: 65px;
     width: 100%;
+    
 }
 
 .botoes a .botao_atalho:hover {
