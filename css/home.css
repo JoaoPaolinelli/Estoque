@@ -42,7 +42,6 @@ main {
 }
 
 .pesquisa_rapida {
-    display: grid;
     height: auto;
     overflow: scroll;
     background-color: #e7e7e3;
@@ -68,7 +67,7 @@ main {
 
     .pesquisa_rapida 
     .tabela_resultados_pesquisa {
-
+        
     }
 
 
