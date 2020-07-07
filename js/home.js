@@ -18,29 +18,19 @@ function pesquisarProdutos() {
   }
 
 function imprimeTabela(dados) {
-  let tabela = document.querySelector('.tabela_resultados_da_pesquisa');
-  let strHtml = `        
-    <thead>
-      <tr> 
-        <th scope="col">Código</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Valor Un.</th>
-      </tr>
-    </thead>`;
+  let tabela = document.querySelector('#corpoTabela');
+  let strHtml = ``;
   console.log('dados.length = ' + dados.length);
   for (i = 0; i < dados.length; i++) {
     let obj = dados[i];
     console.log("objeto = ");
     console.log(obj);
     strHtml += `
-
-        <tbody id="corpoTabela">
-          <tr id="linha${i}">
-            <td scope="row">${dados[i].codigo}</td>
-            <td>${dados[i].descricao}</td>
-            <td>${dados[i].valor}</td>
-          </tr>
-        </tbody> 
+      <tr id="linha${i}">
+        <td scope="row">${dados[i].codigo}</td>
+        <td>${dados[i].descricao}</td>
+        <td>${dados[i].valor}</td>
+      </tr>
     `
   }
   tabela.innerHTML = strHtml;
