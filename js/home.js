@@ -1,5 +1,45 @@
-var objDadosDeCadastro = JSON.parse(localStorage.getItem('dados'));
-var CNPJdaEmpresa = objDadosDeCadastro.CNPJ;
+var CNPJdaEmpresa = JSON.parse(localStorage.getItem('dados')).CNPJ;
+
+/* PESQUISA */
+
+function pesquisarProdutos() {
+    let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
+    let dados = [];
+    let pesq = document.querySelector('.campo_pesquisa').value;
+    for (i = 0; i < db.produtos.length; i++) {
+      if(db.produtos[i].descricao != "") {
+        if (db.produtos[i].descricao.includes(pesq)) {
+          dados.push(db.produtos[i]);
+        }
+      } 
+    }
+    console.log(dados);
+    imprimeTabela(dados);
+  }
+
+function imprimeTabela(dados) {
+  let tabela = document.querySelector('#corpoTabela');
+  let strHtml = ``;
+  console.log('dados.length = ' + dados.length);
+  for (i = 0; i < dados.length; i++) {
+    let obj = dados[i];
+    console.log("objeto = ");
+    console.log(obj);
+    strHtml += `
+      <tr id="linha${i}">
+        <td scope="row">${dados[i].codigo}</td>
+        <td>${dados[i].descricao}</td>
+        <td>${dados[i].valor}</td>
+      </tr>
+    `
+  }
+  tabela.innerHTML = strHtml;
+}
+
+
+
+
+
 
 function existeArmazenado(key) {
     if (localStorage.getItem(key) == null) {

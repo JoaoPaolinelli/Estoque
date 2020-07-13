@@ -1,6 +1,12 @@
 var CNPJdaEmpresa = JSON.parse(localStorage.getItem('dados')).CNPJ;
 
-leDados();
+window.onload = () => {
+  imprimeTabela(JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`)).produtos);
+
+  document.querySelector('#cancela').addEventListener('click',limparTela);
+  document.querySelector('.executa_pesquisa').addEventListener('click',pesquisarProdutos);
+}
+
 function leDados() {
   let strDados = localStorage.getItem(`${CNPJdaEmpresa}`);
   let objDados = {};
@@ -13,7 +19,6 @@ function leDados() {
     }
   return objDados;
 }
-
 
 function pesquisarProdutos() {
   let db = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
@@ -28,11 +33,10 @@ function pesquisarProdutos() {
   imprimeTabela(dados);
 }
 
-
 function imprimeTabela(dados) {
   let tabela = document.querySelector('#corpoTabela');
   let strHtml = '';
-  console.log('dados.lenght = ' + dados.length);
+  console.log('dados.length = ' + dados.length);
   for (i = 0; i < dados.length; i++) {
     let obj = dados[i];
     console.log("objeto = ");
@@ -54,7 +58,6 @@ function imprimeTabela(dados) {
   tabela.innerHTML = strHtml;
 }
 
-
 function preencherBox(n) {
   console.log(n);
   let box = document.querySelector('.box_descricao');
@@ -71,29 +74,34 @@ function preencherBox(n) {
     <div class="quantidade">
       <strong>Quantidade: <br></strong>
       <input id="quantidade" value="1">
-      <button onclick="acr(1)"  id="mais">+</button>
-      <button onclick="acr(-1)" id="menos">-</button>
+      <button onclick="acr(1, ${n})"  id="mais">+</button>
+      <button onclick="acr(-1, ${n})" id="menos">-</button>
     </div>
     <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
     <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
   `;
   box.innerHTML = novoBox;
 
-  document.querySelector('#confirma').addEventListener('click',()=>{vender(des,cod)});
+  document.querySelector('#confirma').addEventListener('click',function()
+    {vender(des,cod)});
 
 
 }
 
-
-function acr(n) {
+function acr(n, i) {
   let campo = document.querySelector('#quantidade').value;
-  campo = +campo + n;
-  document.querySelector('#quantidade').outerHTML = `
-    <input id="quantidade" value="${campo}">
-  `;
+  campo =+ campo + n;
+  //Corresponde a quantidade inicial.TODO: renomear.
+  let qtdMax = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`)).produtos[i].quantidade; 
+
+  console.log("campo <= qtdMax: ", campo <= qtdMax);
+  if(campo <= qtdMax && campo >= 0){
+    document.querySelector("#quantidade").setAttribute("value", campo);
+    document.querySelector("#quantidade").style.border = "2px inset";
+  }
+  else
+    document.querySelector("#quantidade").style.border = "2px inset red";
 }
-
-
 
 function vender(des,cod) {
   let objEstoque = JSON.parse(localStorage.getItem(`${CNPJdaEmpresa}`));
@@ -111,18 +119,19 @@ function vender(des,cod) {
   }
   localStorage.setItem(`${CNPJdaEmpresa}`, JSON.stringify(objEstoque));
   imprimeTabela(arrItens);
+  limparTela();
+  alert("Venda realizada com sucesso!");
 }
 
 
-
-document.querySelector('#cancela').addEventListener('click',limparTela);
+//! NÃO TÁ FUNCIONANDO 
 function limparTela() {
 
   let boxDesc = document.querySelector('.box_descricao');
   let telaLimpa = `
     <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto">
     <span id="valor">
-      <strong>Valor: </strong>
+      <strong>Valor unitário: </strong>
       <span id="valor"></span>
     </span>
     <span id="descricao">
@@ -135,8 +144,12 @@ function limparTela() {
     <div class="quantidade">
       <strong>Quantidade: <br></strong>
       <input id="quantidade" value="0">
-      <button id="mais">+</button>
-      <button id="menos">-</button>
+      <button id="mais" class="btn btn-light">
+        <i class="fas fa-plus"></i>
+      </button>
+      <button id="menos" class="btn btn-light">
+        <i class="fas fa-minus"></i>
+      </button>
     </div>
     
     <button class="btn btn-success confirma" id="confirma"><i class="fas fa-check"></i></button>
@@ -144,3 +157,5 @@ function limparTela() {
   `;
   boxDesc.innerHTML = telaLimpa;
 }
+
+

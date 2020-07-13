@@ -7,7 +7,7 @@ window.onload = () => {
         };
         localStorage.setItem("compras", JSON.stringify(value));
     }
-
+    isCompraUndefined();
     mostrarSalvos();
 
     document.querySelector("#btnRegistrar").addEventListener("click", (e) => {
@@ -24,6 +24,10 @@ function mostrarSalvos() {
     if (hasCompras() && !compraIsEmpty()) {
         console.log("A");
         for (i = 0; i < compras.length; i++) {
+            dataAq = formatDate(compras[i].data);
+            validade = formatDate(compras[i].validade);
+            console.log("Data ",compras[i].data);
+            console.log("Validade ",compras[i].validade);
             html += `
                 <tr id="${compras[i].id}-linha">
                     <td>${compras[i].cod}</td>
@@ -32,7 +36,8 @@ function mostrarSalvos() {
                     <td>${compras[i].categoria}</td>
                     <td>${compras[i].quantidade}</td>
                     <td>${compras[i].valor}</td>
-                    <td>${compras[i].data}</td>
+                    <td>${dataAq}</td>
+                    <td>${validade}</td>
                     <th><i class="fas fa-check text-success " id="${compras[i].id}-check" data-toggle="modal" data-target="#modalConfirmarCompra"></i></th>
                     <th><i class="fas fa-times text-danger" id="${compras[i].id}-close"></i></th>
                 </tr>
@@ -66,6 +71,14 @@ function mostrarSalvos() {
 
 }
 
+function formatDate(data){
+    var date = new Date(data),
+        dia = date.getDate().toString().padStart(2, "0"),
+        mes = (date.getMonth()+1).toString().padStart(2, "0"),
+        ano = date.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+}
+
 function salvarCompra() {
     if (hasCompras()) {
         if (isAllFilled()) {
@@ -94,6 +107,7 @@ function addCompra(compras) {
     let valor = document.querySelector("#valor").value;
     let data = document.querySelector("#data").value;
     let fornecedor = document.querySelector("#fornecedores").value;
+    let validade = document.querySelector("#validade").value;
     let novo = {
         id: generateUUID(),
         cod: codigo, //TEMPORARIO
@@ -102,7 +116,8 @@ function addCompra(compras) {
         quantidade: quantidade,
         valor: valor,
         data: data,
-        fornecedor: fornecedor
+        fornecedor: fornecedor,
+        validade
     };
 
     compras.compras.push(novo);
@@ -112,11 +127,12 @@ function addCompra(compras) {
 function deletarCompra(id){
     let elem = document.getElementById(`${id}-linha`);
     elem.parentNode.removeChild(elem);
-
-    let compras = JSON.parse(localStorage.getItem("compras")).compras;
-    let index = compras.indexOf(id);
-    compras.splice(index, 1);
-    localStorage.setItem("compras",JSON.stringify(compras));
+    let obj = JSON.parse(localStorage.getItem("compras"));
+    let index = obj.compras.indexOf(id);
+   
+    obj.compras.splice(index, 1);
+    
+    localStorage.setItem("compras",JSON.stringify(obj));
 }
 
 function abrirModalConfirmar(id){
@@ -149,7 +165,7 @@ function confirmarCompra(id){
 function hasCompras() {
     has = true;
     obj = JSON.parse(localStorage.getItem("compras"));
-    isCompraUndefined();
+    //
     if (localStorage.getItem("compras") === null) {
         has = false;
     }
@@ -256,6 +272,7 @@ function cadastrarProdutoComprado(id) {
     let dataAquisicao = objCompra.data;
     let fornecedor = objCompra.fornecedor;
     let valorAquisicao = objCompra.valor;
+    let validade = objCompra.validade;
     let novoItem = {
         id: generateUUID(),
         descricao: strDescricao, 
@@ -270,6 +287,7 @@ function cadastrarProdutoComprado(id) {
         valorInicial,
         isComprado,
         dataAquisicao,
+        validade,
         fornecedor,
         valorAquisicao
     };
